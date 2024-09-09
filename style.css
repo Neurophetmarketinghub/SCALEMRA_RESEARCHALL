@@ -2719,4 +2719,4 @@ input[type='radio']:checked:disabled + label::after {
 @media screen and (max-width: 424px) {
     .imgType > li {width: 100%;}
 }
-/*-- 이미지 리스트 */
+
