@@ -56,20 +56,21 @@
 			background: #f1f7ff;
 		}
 	</style>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 	<title>Document</title>
 </head>
 
 <body>
 
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
-	<script src="https://code.highcharts.com/modules/export-data.js"></script>
-	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 	<figure class="highcharts-figure">
 		<div id="container"></div>
 	</figure>
+
 	<script>
 		Highcharts.chart('container', {
 			chart: {
@@ -81,26 +82,42 @@
 			xAxis: {
 				categories: [
 					202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112, 202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212, 202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312, 202401
-
 				]
+			},
+			yAxis: {
+				labels: {
+					enabled: false
+				}
+			},
+			tooltip: {
+				useHTML: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.75)',
+				style: {
+					color: 'white'
+				},
+				formatter: function () {
+					const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
+					const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
+					return text;
+				},
+				borderWidth: 0,
+				padding: 10
 			},
 			plotOptions: {
 				line: {
 					dataLabels: {
 						enabled: true
 					},
-					enableMouseTracking: false
+					enableMouseTracking: true // Ensure that mouse tracking is enabled for tooltips
 				}
 			},
 			series: [{
 				name: '환자수',
 				data: [
 					22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956, 26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865, 29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245, 33507
-
 				]
-			},]
+			}]
 		});
-
 	</script>
 
 </body>
