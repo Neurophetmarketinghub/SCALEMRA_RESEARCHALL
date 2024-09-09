@@ -4710,26 +4710,7 @@
 
 
 
-
-        <script>
-            $(document).ready(function () {
-                //URL 복사하기
-                $('#urlCopy').click(function (e) {
-                    e.preventDefault();
-                    var _url = window.location.href;
-                    //IE
-                    if (window.clipboardData && clipboardData.setData) {
-                        window.clipboardData.setData('Text', _url);
-                        alert("이 글의 주소(URL)가 복사되었습니다.\nCtrl + v 또는 붙여 넣기를 선택하여 이용하시기 바랍니다.");
-                    }
-                    //기타
-                    else {
-                        prompt("이 글의 주소(URL)입니다. \nCtrl + C를 불러 클립보드에 복사하세요. ", _url);
-                    }
-                });
-            });
-
-        </script>
+ 
     </div>
 </body>
 
