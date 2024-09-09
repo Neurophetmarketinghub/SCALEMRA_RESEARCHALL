@@ -2,358 +2,358 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
 
-        .container-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+		.container-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+		}
 
-        .chart-container {
-            width: 70%;
-            max-width: 1200px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            background-color: #fff;
-            padding: 20px;
-        }
+		.chart-container {
+			width: 70%;
+			max-width: 1200px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			background-color: #fff;
+			padding: 20px;
+		}
 
-        .highcharts-figure,
-        #container,
-        #pie-container {
-            height: 70vh;
-            width: 100%;
-            margin: 0;
-        }
+		.highcharts-figure,
+		#container,
+		#pie-container {
+			height: 70vh;
+			width: 100%;
+			margin: 0;
+		}
 
-        .button-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+		.button-container {
+			text-align: center;
+			margin-bottom: 20px;
+		}
 
-        .button-container button {
-            padding: 12px 24px;
-            margin: 5px;
-            border: none;
-            border-radius: 25px;
-            background: linear-gradient(90deg, rgba(128, 128, 128, 0.164), rgba(128, 128, 128, 0.164));
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
+		.button-container button {
+			padding: 12px 24px;
+			margin: 5px;
+			border: none;
+			border-radius: 25px;
+			background: linear-gradient(90deg, rgba(128, 128, 128, 0.164), rgba(128, 128, 128, 0.164));
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s, transform 0.3s;
+		}
 
-        .button-container button.active {
-            background: #007bff;
-            transform: scale(1.05);
-        }
+		.button-container button.active {
+			background: #007bff;
+			transform: scale(1.05);
+		}
 
-        .button-container button:hover {
-            background: #027cfd27;
-            transform: scale(1.05);
-        }
+		.button-container button:hover {
+			background: #027cfd27;
+			transform: scale(1.05);
+		}
 
-        .custom-tooltip {
-            background-color: rgba(0, 0, 0, 0.85);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-        }
-    </style> 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="js/exportingdatas.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <title>SCALE MRA_DATA HUB</title>
+		.custom-tooltip {
+			background-color: rgba(0, 0, 0, 0.85);
+			color: white;
+			padding: 12px;
+			border-radius: 8px;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+		}
+	</style>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="js/exportingdatas.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<title>SCALE MRA_DATA HUB</title>
 </head>
 
 <body>
-    <header>
-        <h1 style="text-align: center; color: #333; margin: 20px 0;">Data Visualization Dashboard</h1>
-    </header>
+	<header>
+		<h1 style="text-align: center; color: #333; margin: 20px 0;">Data Visualization Dashboard</h1>
+	</header>
 
-    <div class="container-wrapper">
-        <div class="chart-container">
-            <section class="button-container">
-                <button id="monthly" class="active">Monthly</button>
-                <button id="quarterly">Quarterly</button>
-                <button id="yearly">Yearly</button>
-            </section>
+	<div class="container-wrapper">
+		<div class="chart-container">
+			<section class="button-container">
+				<button id="monthly" class="active">Monthly</button>
+				<button id="quarterly">Quarterly</button>
+				<button id="yearly">Yearly</button>
+			</section>
 
-            <section>
-                <figure class="highcharts-figure">
-                    <div id="container"></div>
-                </figure>
-            </section>
-        </div>
-    </div>
+			<section>
+				<figure class="highcharts-figure">
+					<div id="container"></div>
+				</figure>
+			</section>
+		</div>
+	</div>
 
-    <div class="container-wrapper">
-        <div class="chart-container">
-            <section class="button-container">
-                <button id="year2021" class="active">2021</button>
-                <button id="year2022">2022</button>
-                <button id="year2023">2023</button>
-            </section>
-            <section>
-                <figure class="highcharts-figure">
-                    <div id="pie-container"></div>
-                </figure>
-            </section>
-        </div>
-    </div>
+	<div class="container-wrapper">
+		<div class="chart-container">
+			<section class="button-container">
+				<button id="year2021" class="active">2021</button>
+				<button id="year2022">2022</button>
+				<button id="year2023">2023</button>
+			</section>
+			<section>
+				<figure class="highcharts-figure">
+					<div id="pie-container"></div>
+				</figure>
+			</section>
+		</div>
+	</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dataSets = {
-                monthly: {
-                    categories: [
-                        202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
-                        202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
-                        202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
-                    ],
-                    data: [
-                        22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956,
-                        26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865,
-                        29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245
-                    ]
-                },
-                quarterly: {
-                    categories: [
-                        'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
-                        'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
-                        'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
-                    ],
-                    data: [
-                        71984, 80276, 79771, 84594,
-                        78464, 87849, 90606, 92717,
-                        91966, 96349, 95044, 96268
-                    ]
-                },
-                yearly: {
-                    categories: ['2021', '2022', '2023'],
-                    data: [316625, 349636, 379627]
-                },
-                ageGroup: {
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const dataSets = {
+				monthly: {
+					categories: [
+						202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
+						202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
+						202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
+					],
+					data: [
+						22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956,
+						26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865,
+						29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245
+					]
+				},
+				quarterly: {
+					categories: [
+						'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
+						'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
+						'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
+					],
+					data: [
+						71984, 80276, 79771, 84594,
+						78464, 87849, 90606, 92717,
+						91966, 96349, 95044, 96268
+					]
+				},
+				yearly: {
+					categories: ['2021', '2022', '2023'],
+					data: [316625, 349636, 379627]
+				},
+				ageGroup: {
 					'2021': {
-        categories: [
-            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
-            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
-            'Over 80 years old'
-        ],
-        data: [
-            58522600, 249597260, 1630221010, 8069725560,
-            27649267630, 66514862060, 97996199300, 55978060560,
-            12646960980
-                        ]
-                    },
-                    '2022': {
-        categories: [
-            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
-            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
-            'Over 80 years old'
-        ],
-        data: [
-            37912250, 191601150, 1771758740, 7694868180,
-            29374356370, 70626244090, 104192285620, 60137511800,
-            14608379420
-                        ]
-                    },
-                    '2023': {
-                        categories: [
-                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
-                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
-                            'Over 80 years old'
-                        ],
-                        data: [
-                            32500000, 290000000, 1800000000, 8100000000,
-                            32000000000, 78000000000, 118000000000, 69000000000,
-                            17500000000
-                        ]
-                    }
-                }
-            };
+						categories: [
+							'0-9세', '10-19세', '20-29세', '30-39세',
+							'40-49세', '50-59세', '60-69세', '70-79세',
+							'Over 80세'
+						],
+						data: [
+							58522600, 249597260, 1630221010, 8069725560,
+							27649267630, 66514862060, 97996199300, 55978060560,
+							12646960980
+						]
+					},
+					'2022': {
+						categories: [
+							'0-9세', '10-19세', '20-29세', '30-39세',
+							'40-49세', '50-59세', '60-69세', '70-79세',
+							'Over 80세'
+						],
+						data: [
+							37912250, 191601150, 1771758740, 7694868180,
+							29374356370, 70626244090, 104192285620, 60137511800,
+							14608379420
+						]
+					},
+					'2023': {
+						categories: [
+							'0-9세', '10-19세', '20-29세', '30-39세',
+							'40-49세', '50-59세', '60-69세', '70-79세',
+							'Over 80세'
+						],
+						data: [
+							32500000, 290000000, 1800000000, 8100000000,
+							32000000000, 78000000000, 118000000000, 69000000000,
+							17500000000
+						]
+					}
+				}
+			};
 
-            let lineChart = Highcharts.chart('container', {
-                chart: {
-                    type: 'line'
-                },
-                title: {
-                    text: '월별 환자수 추이 (단위: 명)'
-                },
-                xAxis: {
-                    categories: dataSets.monthly.categories
-                },
-                yAxis: {
-                    labels: {
-                        enabled: true
-                    }
-                },
-                tooltip: {
-                    useHTML: true,
-                    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-                    borderRadius: 8,
-                    borderWidth: 0,
-                    padding: 12,
-                    shadow: true,
-                    style: {
-                        color: 'white',
-                        fontSize: '14px'
-                    },
-                    formatter: function () {
-                        return `
+			let lineChart = Highcharts.chart('container', {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: '월별 환자수 추이 (단위: 명)'
+				},
+				xAxis: {
+					categories: dataSets.monthly.categories
+				},
+				yAxis: {
+					labels: {
+						enabled: true
+					}
+				},
+				tooltip: {
+					useHTML: true,
+					backgroundColor: 'rgba(0, 0, 0, 0.85)',
+					borderRadius: 8,
+					borderWidth: 0,
+					padding: 12,
+					shadow: true,
+					style: {
+						color: 'white',
+						fontSize: '14px'
+					},
+					formatter: function () {
+						return `
                             <div class="custom-tooltip">
                                 <b>${this.x}</b><br/>
                                 <b>${this.series.name}:</b> ${this.y}
                             </div>
                         `;
-                    },
-                    positioner: function (labelWidth, labelHeight, point) {
-                        let x = point.plotX + this.chart.plotLeft;
-                        let y = point.plotY + this.chart.plotTop;
+					},
+					positioner: function (labelWidth, labelHeight, point) {
+						let x = point.plotX + this.chart.plotLeft;
+						let y = point.plotY + this.chart.plotTop;
 
-                        if (x + labelWidth > this.chart.chartWidth) {
-                            x -= (x + labelWidth) - this.chart.chartWidth;
-                        }
-                        if (y + labelHeight > this.chart.chartHeight) {
-                            y -= (y + labelHeight) - this.chart.chartHeight;
-                        }
+						if (x + labelWidth > this.chart.chartWidth) {
+							x -= (x + labelWidth) - this.chart.chartWidth;
+						}
+						if (y + labelHeight > this.chart.chartHeight) {
+							y -= (y + labelHeight) - this.chart.chartHeight;
+						}
 
-                        return { x: x, y: y };
-                    }
-                },
-                plotOptions: {
-                    line: {
-                        dataLabels: {
-                            enabled: true
-                        },
-                        enableMouseTracking: true
-                    }
-                },
-                series: [{
-                    name: '환자수',
-                    data: dataSets.monthly.data
-                }]
-            });
+						return { x: x, y: y };
+					}
+				},
+				plotOptions: {
+					line: {
+						dataLabels: {
+							enabled: true
+						},
+						enableMouseTracking: true
+					}
+				},
+				series: [{
+					name: '환자수',
+					data: dataSets.monthly.data
+				}]
+			});
 
-            let pieChart = Highcharts.chart('pie-container', {
-                chart: {
-                    type: 'pie'
-                },
-                title: {
-                    text: '연령대별 요양급여청구총액 비율 (단위: %, 원)'
-                },
-                tooltip: {
-                    useHTML: true,
-                    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-                    borderRadius: 8,
-                    borderWidth: 0,
-                    padding: 12,
-                    shadow: true,
-                    style: {
-                        color: 'white',
-                        fontSize: '14px'
-                    },
-                    formatter: function () {
-                        return `
+			let pieChart = Highcharts.chart('pie-container', {
+				chart: {
+					type: 'pie'
+				},
+				title: {
+					text: '연령대별 요양급여청구총액 비율 (단위: %, 원)'
+				},
+				tooltip: {
+					useHTML: true,
+					backgroundColor: 'rgba(0, 0, 0, 0.85)',
+					borderRadius: 8,
+					borderWidth: 0,
+					padding: 12,
+					shadow: true,
+					style: {
+						color: 'white',
+						fontSize: '14px'
+					},
+					formatter: function () {
+						return `
                             <div class="custom-tooltip">
                                 <b>${this.point.name}</b><br/>
                                 <b>비율:</b> ${Highcharts.numberFormat(this.percentage, 2)}%<br/>
                                 <b>총액:</b> ${Highcharts.numberFormat(this.point.y, 0)}
                             </div>
                         `;
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        dataLabels: {
-                            enabled: true,
-                            format: '{point.name}: {point.percentage:.1f}%'
-                        }
-                    }
-                },
-                series: [{
-                    name: '비율',
-                    colorByPoint: true,
-                    data: dataSets.ageGroup['2021'].categories.map((name, index) => ({
-                        name: name,
-                        y: dataSets.ageGroup['2021'].data[index]
-                    }))
-                }]
-            });
+					}
+				},
+				plotOptions: {
+					pie: {
+						dataLabels: {
+							enabled: true,
+							format: '{point.name}: {point.percentage:.1f}%'
+						}
+					}
+				},
+				series: [{
+					name: '비율',
+					colorByPoint: true,
+					data: dataSets.ageGroup['2021'].categories.map((name, index) => ({
+						name: name,
+						y: dataSets.ageGroup['2021'].data[index]
+					}))
+				}]
+			});
 
-            function updateLineChart(period) {
-                const data = dataSets[period];
-                lineChart.update({
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: {
-                            monthly: '월별 환자수 추이 (단위: 명)',
-                            quarterly: '분기별 환자수 추이 (단위: 명)',
-                            yearly: '연별 환자수 추이 (단위: 명)'
-                        }[period]
-                    },
-                    xAxis: {
-                        categories: data.categories
-                    },
-                    series: [{
-                        name: '환자수',
-                        data: data.data
-                    }]
-                });
+			function updateLineChart(period) {
+				const data = dataSets[period];
+				lineChart.update({
+					chart: {
+						type: 'line'
+					},
+					title: {
+						text: {
+							monthly: '월별 환자수 추이 (단위: 명)',
+							quarterly: '분기별 환자수 추이 (단위: 명)',
+							yearly: '연별 환자수 추이 (단위: 명)'
+						}[period]
+					},
+					xAxis: {
+						categories: data.categories
+					},
+					series: [{
+						name: '환자수',
+						data: data.data
+					}]
+				});
 
-                document.querySelectorAll('.button-container button').forEach(button => {
-                    button.classList.remove('active');
-                });
-                document.getElementById(period).classList.add('active');
-            }
+				document.querySelectorAll('.button-container button').forEach(button => {
+					button.classList.remove('active');
+				});
+				document.getElementById(period).classList.add('active');
+			}
 
-            function updatePieChart(year) {
-                const data = dataSets.ageGroup[year];
-                pieChart.update({
-                    title: {
-                        text: `${year}년 연령대별 요양급여청구총액 비율 (단위: %, 원)`
-                    },
-                    series: [{
-                        name: '비율',
-                        colorByPoint: true,
-                        data: data.categories.map((name, index) => ({
-                            name: name,
-                            y: data.data[index]
-                        }))
-                    }]
-                });
+			function updatePieChart(year) {
+				const data = dataSets.ageGroup[year];
+				pieChart.update({
+					title: {
+						text: `${year}년 연령대별 요양급여청구총액 비율 (단위: %, 원)`
+					},
+					series: [{
+						name: '비율',
+						colorByPoint: true,
+						data: data.categories.map((name, index) => ({
+							name: name,
+							y: data.data[index]
+						}))
+					}]
+				});
 
-                document.querySelectorAll('.button-container button').forEach(button => {
-                    button.classList.remove('active');
-                });
-                document.getElementById(`year${year}`).classList.add('active');
-            }
+				document.querySelectorAll('.button-container button').forEach(button => {
+					button.classList.remove('active');
+				});
+				document.getElementById(`year${year}`).classList.add('active');
+			}
 
-            document.getElementById('monthly').addEventListener('click', () => updateLineChart('monthly'));
-            document.getElementById('quarterly').addEventListener('click', () => updateLineChart('quarterly'));
-            document.getElementById('yearly').addEventListener('click', () => updateLineChart('yearly'));
+			document.getElementById('monthly').addEventListener('click', () => updateLineChart('monthly'));
+			document.getElementById('quarterly').addEventListener('click', () => updateLineChart('quarterly'));
+			document.getElementById('yearly').addEventListener('click', () => updateLineChart('yearly'));
 
-            document.getElementById('year2021').addEventListener('click', () => updatePieChart('2021'));
-            document.getElementById('year2022').addEventListener('click', () => updatePieChart('2022'));
-            document.getElementById('year2023').addEventListener('click', () => updatePieChart('2023'));
-        });
-    </script> 
+			document.getElementById('year2021').addEventListener('click', () => updatePieChart('2021'));
+			document.getElementById('year2022').addEventListener('click', () => updatePieChart('2022'));
+			document.getElementById('year2023').addEventListener('click', () => updatePieChart('2023'));
+		});
+	</script>
 </body>
 
 </html>
