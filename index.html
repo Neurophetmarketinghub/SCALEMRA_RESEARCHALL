@@ -2,207 +2,287 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>API Interaction Example</title>
-	<script defer src="script.js"></script> <!-- Link to your JavaScript file -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <title>성별/연령10세구간별 &lt;비파열성뇌동맥류 의료통계정보 &lt; 보건의료빅데이터개방시스템</title>
+        <link rel="stylesheet" type="text/css" href="/style.css"> 
+         
 </head>
-
 <body>
-	<div class="content">  
-		<form id="searchForm" action="/op/opc/olap4thDsInfoTab3.do" method="post">
-			<div class="searchBox02">
-				<div class="text func02">
-					<input id="searchWrd" name="searchWrd" class="w350px fix" title="항목 입력" placeholder="항목조회 버튼을 통해 항목을 선택하세요." type="text" value="파열되지 않은 대뇌동맥류" autocomplete="off">
-					<input id="olapCd" name="olapCd" type="hidden" value="AI671">
-					<input id="olapCdNm" name="olapCdNm" type="hidden" value="파열되지 않은 대뇌동맥류">
-					<input id="tabGubun" name="tabGubun" type="hidden" value="Tab3">
-					<a href="#none" class="btn_blue layerOpen" data-layer="layerSearch" id="btnSearch">항목조회</a>
-				</div>
-			</div>
-			<div class="searchBox02" id="searchDate" style="">
-				<div>
-					<label for="gubun01">기간구분</label>
-					<div class="checkList">
-						<span><input id="gubun01" name="gubun" checked="checked" type="radio" value="R"><label for="gubun01">심사년도</label>
-						</span>
-						<span><input id="gubun02" name="gubun" type="radio" value="D" checked="checked"><label for="gubun02">진료년월</label>
-						</span>
-					</div>
-					<span class="mBlock" id="rvDate" style="display: none;">
-						<select id="sRvYr" name="sRvYr" class="date" title="심사년도 시작년">
-							<option value="2023" selected="selected">2023</option>
-							<option value="2022">2022</option>
-							<option value="2021">2021</option>
-							<option value="2020">2020</option>
-							<option value="2019">2019</option>
-							<option value="2018">2018</option>
-							<option value="2017">2017</option>
-							<option value="2016">2016</option>
-							<option value="2015">2015</option>
-							<option value="2014">2014</option>
-							<option value="2013">2013</option>
-							<option value="2012">2012</option>
-							<option value="2011">2011</option>
-							<option value="2010">2010</option>
-						</select> ~ <select id="eRvYr" name="eRvYr" class="date" title="심사년도 종료년">
-							<option value="2023" selected="selected">2023</option>
-							<option value="2022">2022</option>
-							<option value="2021">2021</option>
-							<option value="2020">2020</option>
-							<option value="2019">2019</option>
-							<option value="2018">2018</option>
-							<option value="2017">2017</option>
-							<option value="2016">2016</option>
-							<option value="2015">2015</option>
-							<option value="2014">2014</option>
-							<option value="2013">2013</option>
-							<option value="2012">2012</option>
-							<option value="2011">2011</option>
-							<option value="2010">2010</option>
-						</select>
-						<a href="#none" id="searchBtn1" class="btn_gray">검색</a>
-					</span>
-					<!-- 진료년월 선택시 -->
-					<span class="mBlock" style="" id="diagDate">
-						<input id="sDiagYm" name="sDiagYm" type="hidden" value="202301">
-						<input id="eDiagYm" name="eDiagYm" type="hidden" value="202312">
-						<input id="sYm" name="sYm" class="date2 flatpickr-input" title="진료년월 시작월" type="text" value="2023-01" autocomplete="off" readonly="readonly"> ~ <input id="eYm" name="eYm" class="date2 flatpickr-input" title="진료년월 종료월" type="text" value="2023-12" autocomplete="off" readonly="readonly">
-						<a href="#none" id="searchBtn2" class="btn_gray">검색</a>
-					</span>
-				</div>
-			</div>
-		</form>
-		<!--  심사년도일때 화면  -->
-		<!--  진료년월 일때  -->
+	<div class="content"> 
 		<h3 class="blt01">연도별 환자수 추이 <span>(단위: 명)</span></h3>
 		<div class="chartBox">
 			<div id="ptntCntChart" data-highcharts-chart="0" style="overflow: hidden;">
-				<div id="highcharts-9wd1jge-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 462px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;">
-					<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="462" height="400" viewBox="0 0 462 400" role="img" aria-label="">
+				<div id="highcharts-8rys5mj-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 922px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;">
+					<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="922" height="400" viewBox="0 0 922 400" role="img" aria-label="">
 						<desc>Created with Highcharts 10.3.3</desc>
 						<defs>
-							<clipPath id="highcharts-9wd1jge-1-">
-								<rect x="0" y="0" width="397" height="291" fill="none"></rect>
+							<clipPath id="highcharts-8rys5mj-1-">
+								<rect x="0" y="0" width="847" height="291" fill="none"></rect>
 							</clipPath>
-							<clipPath id="highcharts-9wd1jge-14-">
-								<rect x="0" y="0" width="397" height="291" fill="none"></rect>
+							<clipPath id="highcharts-8rys5mj-38-">
+								<rect x="0" y="0" width="847" height="291" fill="none"></rect>
 							</clipPath>
 						</defs>
-						<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="462" height="400" rx="0" ry="0"></rect>
-						<rect fill="none" class="highcharts-plot-background" x="55" y="10" width="397" height="291">
+						<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="922" height="400" rx="0" ry="0"></rect>
+						<rect fill="none" class="highcharts-plot-background" x="65" y="10" width="847" height="291">
 						</rect>
 						<g class="highcharts-pane-group" data-z-index="0"></g>
 						<g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 87.5 10 L 87.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 120.5 10 L 120.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 153.5 10 L 153.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 186.5 10 L 186.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 219.5 10 L 219.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 88.5 10 L 88.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 111.5 10 L 111.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 135.5 10 L 135.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 158.5 10 L 158.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 182.5 10 L 182.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 205.5 10 L 205.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 229.5 10 L 229.5 301" opacity="1"></path>
 							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 252.5 10 L 252.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 286.5 10 L 286.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 319.5 10 L 319.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 352.5 10 L 352.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 385.5 10 L 385.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 418.5 10 L 418.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 451.5 10 L 451.5 301" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 54.5 10 L 54.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 276.5 10 L 276.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 299.5 10 L 299.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 323.5 10 L 323.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 346.5 10 L 346.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 370.5 10 L 370.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 393.5 10 L 393.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 417.5 10 L 417.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 440.5 10 L 440.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 464.5 10 L 464.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 487.5 10 L 487.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 511.5 10 L 511.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 535.5 10 L 535.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 558.5 10 L 558.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 582.5 10 L 582.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 605.5 10 L 605.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 629.5 10 L 629.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 652.5 10 L 652.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 676.5 10 L 676.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 699.5 10 L 699.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 723.5 10 L 723.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 746.5 10 L 746.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 770.5 10 L 770.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 793.5 10 L 793.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 817.5 10 L 817.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 840.5 10 L 840.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 864.5 10 L 864.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 887.5 10 L 887.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 911.5 10 L 911.5 301" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 64.5 10 L 64.5 301" opacity="1"></path>
 						</g>
 						<g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 301.5 L 452 301.5" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 243.5 L 452 243.5" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 185.5 L 452 185.5" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 126.5 L 452 126.5" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 68.5 L 452 68.5" opacity="1"></path>
-							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 55 9.5 L 452 9.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 301.5 L 912 301.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 253.5 L 912 253.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 204.5 L 912 204.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 156.5 L 912 156.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 107.5 L 912 107.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 59.5 L 912 59.5" opacity="1"></path>
+							<path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 65 9.5 L 912 9.5" opacity="1"></path>
 						</g>
-						<rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="55" y="10" width="397" height="291"></rect>
+						<rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="65" y="10" width="847" height="291"></rect>
 						<g class="highcharts-axis highcharts-xaxis" data-z-index="2">
-							<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 55 301.5 L 452 301.5"></path>
+							<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 65 301.5 L 912 301.5"></path>
 						</g>
-						<g class="highcharts-axis highcharts-yaxis" data-z-index="2"><text x="9.888866424560547" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 9.888866424560547 155.5)" class="highcharts-axis-title" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="155.5"></text>
-							<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="0" data-z-index="7" d="M 55 10 L 55 301"></path>
+						<g class="highcharts-axis highcharts-yaxis" data-z-index="2"><text x="10.252832412719727" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 10.252832412719727 155.5)" class="highcharts-axis-title" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="155.5"></text>
+							<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="0" data-z-index="7" d="M 65 10 L 65 301"></path>
 						</g>
 						<g class="highcharts-series-group" data-z-index="3">
-							<g class="highcharts-series highcharts-series-0 highcharts-line-series highcharts-color-0" data-z-index="0.1" opacity="1" transform="translate(55,10) scale(1 1)" clip-path="url(#highcharts-9wd1jge-14-)">
-								<path fill="none" d="M 16.541666666667 262.773 L 49.625 228.4932 L 82.708333333334 92.71260000000001 L 115.79166666667 151.3782 L 148.875 96.6702 L 181.95833333334 80.8398 L 215.04166666667 82.7604 L 248.125 67.1046 L 281.20833333334 254.9742 L 314.29166666667 140.4366 L 347.375 32.82479999999998 L 380.45833333334 160.341" class="highcharts-graph" data-z-index="1" stroke="#7CB5EC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-								<path fill="none" d="M 16.541666666667 262.773 L 49.625 228.4932 L 82.708333333334 92.71260000000001 L 115.79166666667 151.3782 L 148.875 96.6702 L 181.95833333334 80.8398 L 215.04166666667 82.7604 L 248.125 67.1046 L 281.20833333334 254.9742 L 314.29166666667 140.4366 L 347.375 32.82479999999998 L 380.45833333334 160.341" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22" style="cursor: pointer;"></path>
+							<g class="highcharts-series highcharts-series-0 highcharts-line-series highcharts-color-0" data-z-index="0.1" opacity="1" transform="translate(65,10) scale(1 1)" clip-path="url(#highcharts-8rys5mj-38-)">
+								<path fill="none" d="M 11.763888888889 234.934 L 35.291666666667 245.0802 L 58.819444444445 160.4962 L 82.347222222222 162.1064 L 105.875 177.995 L 129.40277777778 139.5442 L 152.93055555556 145.0538 L 176.45833333333 159.9724 L 199.98611111111 184.4164 L 223.51388888889 167.2862 L 247.04166666667 111.3366 L 270.56944444445 117.2536 L 294.09722222222 162.5138 L 317.625 205.75639999999999 L 341.15277777778 146.5282 L 364.68055555556 150.4082 L 388.20833333333 88.8132 L 411.73611111111 93.50800000000001 L 435.26388888889 95.8748 L 458.79166666667 81.24719999999999 L 482.31944444445 102.1216 L 505.84722222222 118.82499999999999 L 529.375 58.64619999999999 L 552.90277777778 60.81899999999999 L 576.43055555556 106.99100000000001 L 599.95833333333 95.5644 L 623.48611111111 50.30420000000001 L 647.01388888889 69.8594 L 670.54166666667 51.623400000000004 L 694.06944444445 46.346599999999995 L 717.59722222222 46.98679999999999 L 741.125 41.76820000000001 L 764.65277777778 104.3914 L 788.18055555556 66.2122 L 811.70833333333 30.341600000000028 L 835.23611111111 72.84700000000001" class="highcharts-graph" data-z-index="1" stroke="#7CB5EC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+								<path fill="none" d="M 11.763888888889 234.934 L 35.291666666667 245.0802 L 58.819444444445 160.4962 L 82.347222222222 162.1064 L 105.875 177.995 L 129.40277777778 139.5442 L 152.93055555556 145.0538 L 176.45833333333 159.9724 L 199.98611111111 184.4164 L 223.51388888889 167.2862 L 247.04166666667 111.3366 L 270.56944444445 117.2536 L 294.09722222222 162.5138 L 317.625 205.75639999999999 L 341.15277777778 146.5282 L 364.68055555556 150.4082 L 388.20833333333 88.8132 L 411.73611111111 93.50800000000001 L 435.26388888889 95.8748 L 458.79166666667 81.24719999999999 L 482.31944444445 102.1216 L 505.84722222222 118.82499999999999 L 529.375 58.64619999999999 L 552.90277777778 60.81899999999999 L 576.43055555556 106.99100000000001 L 599.95833333333 95.5644 L 623.48611111111 50.30420000000001 L 647.01388888889 69.8594 L 670.54166666667 51.623400000000004 L 694.06944444445 46.346599999999995 L 717.59722222222 46.98679999999999 L 741.125 41.76820000000001 L 764.65277777778 104.3914 L 788.18055555556 66.2122 L 811.70833333333 30.341600000000028 L 835.23611111111 72.84700000000001" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22" style="cursor: pointer;"></path>
 							</g>
-							<g class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(55,10) scale(1 1)" clip-path="none" style="cursor: pointer;">
-								<path fill="#7CB5EC" d="M 491 87.507 A 0 0 0 1 1 491 87.507 Z" class="highcharts-halo highcharts-color-0" data-z-index="-1" fill-opacity="0.25" visibility="hidden"></path>
-								<path fill="#7CB5EC" d="M 16 266.773 A 4 4 0 1 1 16.003999999333335 266.7729980000002 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 49 232.4932 A 4 4 0 1 1 49.00399999933334 232.49319800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 82 96.71260000000001 A 4 4 0 1 1 82.00399999933333 96.71259800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 115 155.3782 A 4 4 0 1 1 115.00399999933333 155.37819800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 148 100.6702 A 4 4 0 1 1 148.00399999933333 100.67019800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 181 84.8398 A 4 4 0 1 1 181.00399999933333 84.83979800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 215 86.7604 A 4 4 0 1 1 215.00399999933333 86.76039800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 248 71.1046 A 4 4 0 1 1 248.00399999933333 71.10459800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 281 258.9742 A 4 4 0 1 1 281.00399999933336 258.9741980000002 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 314 144.4366 A 4 4 0 1 1 314.00399999933336 144.43659800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 347 36.82479999999998 A 4 4 0 1 1 347.00399999933336 36.82479800000015 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#7CB5EC" d="M 380 164.341 A 4 4 0 1 1 380.00399999933336 164.34099800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+							<g class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(65,10) scale(1 1)" clip-path="none" style="cursor: pointer;">
+								<path fill="#7CB5EC" d="M 11 239 A 4 4 0 1 1 11.003999999333336 238.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 35 249 A 4 4 0 1 1 35.00399999933334 248.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 58 164 A 4 4 0 1 1 58.00399999933334 163.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 82 166 A 4 4 0 1 1 82.00399999933333 165.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 105 182 A 4 4 0 1 1 105.00399999933333 181.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 129 144 A 4 4 0 1 1 129.00399999933333 143.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 152 149 A 4 4 0 1 1 152.00399999933333 148.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 176 164 A 4 4 0 1 1 176.00399999933333 163.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 199 188 A 4 4 0 1 1 199.00399999933333 187.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 223 171 A 4 4 0 1 1 223.00399999933333 170.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 247 115 A 4 4 0 1 1 247.00399999933333 114.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 270 121 A 4 4 0 1 1 270.00399999933336 120.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 294 167 A 4 4 0 1 1 294.00399999933336 166.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 317 210 A 4 4 0 1 1 317.00399999933336 209.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 341 151 A 4 4 0 1 1 341.00399999933336 150.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 364 154 A 4 4 0 1 1 364.00399999933336 153.99999800000018 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 388 93 A 4 4 0 1 1 388.00399999933336 92.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 411 98 A 4 4 0 1 1 411.00399999933336 97.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 435 100 A 4 4 0 1 1 435.00399999933336 99.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 458 85 A 4 4 0 1 1 458.00399999933336 84.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 482 106 A 4 4 0 1 1 482.00399999933336 105.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 505 123 A 4 4 0 1 1 505.00399999933336 122.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 529 63 A 4 4 0 1 1 529.0039999993334 62.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 552 65 A 4 4 0 1 1 552.0039999993334 64.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 576 111 A 4 4 0 1 1 576.0039999993334 110.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 599 100 A 4 4 0 1 1 599.0039999993334 99.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 623 54 A 4 4 0 1 1 623.0039999993334 53.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 647 74 A 4 4 0 1 1 647.0039999993334 73.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 670 56 A 4 4 0 1 1 670.0039999993334 55.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 694 50 A 4 4 0 1 1 694.0039999993334 49.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 717 51 A 4 4 0 1 1 717.0039999993334 50.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 741 46 A 4 4 0 1 1 741.0039999993334 45.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 764 108 A 4 4 0 1 1 764.0039999993334 107.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 788 70 A 4 4 0 1 1 788.0039999993334 69.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 811 34 A 4 4 0 1 1 811.0039999993334 33.99999800000017 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#7CB5EC" d="M 835 77 A 4 4 0 1 1 835.0039999993334 76.99999800000016 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point highcharts-color-0"></path>
 							</g>
 						</g>
 						<g class="highcharts-exporting-group" data-z-index="3">
-							<g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" style="cursor: pointer;" transform="translate(428,10)">
+							<g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" style="cursor: pointer;" transform="translate(888,10)">
 								<title>Chart context menu</title>
 								<rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="24" height="22" rx="2" ry="2" stroke="none" stroke-width="1"></rect>
 								<path fill="#666666" d="M 6 6.5 L 20 6.5 M 6 11.5 L 20 11.5 M 6 16.5 L 20 16.5" class="highcharts-button-symbol" data-z-index="1" stroke="#666666" stroke-width="3">
 								</path><text x="0" data-z-index="1" y="15.5" style="color: rgb(51, 51, 51); font-weight: normal; fill: rgb(51, 51, 51);"></text>
 							</g>
-						</g><text x="231" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="231" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="397"></text>
-						<g class="highcharts-data-labels highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker" data-z-index="6" opacity="1" transform="translate(55,10) scale(1 1)" style="cursor: pointer;">
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" style="cursor: pointer;" transform="translate(-5,239)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">29,485<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+						</g><text x="461" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="461" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="397"></text>
+						<g class="highcharts-data-labels highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker" data-z-index="6" opacity="1" transform="translate(65,10) scale(1 1)" style="cursor: pointer;">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" style="cursor: pointer;" transform="translate(-5,211)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">22,890<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>22,890
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(11,221)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">22,367<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>22,367
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(35,136)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">26,727<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>26,727
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(58,138)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">26,644<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>26,644
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(82,154)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">25,825<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>25,825
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(105,116)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">27,807<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>27,807
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(129,121)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">27,523<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>27,523
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(152,136)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">26,754<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>26,754
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(176,160)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">25,494<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>25,494
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(199,143)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">26,377<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>26,377
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(223,87)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">29,261<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>29,261
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(246,93)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">28,956<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>28,956
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(270,139)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">26,623<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>26,623
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(293,182)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">24,394<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>24,394
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(317,123)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">27,447<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>27,447
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(341,126)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">27,247<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>27,247
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(364,65)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">30,422<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>30,422
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(388,70)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">30,180<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>30,180
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(411,72)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">30,058<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>30,058
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(435,57)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">30,812<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>30,812
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(458,78)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">29,736<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>29,736
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(482,95)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">28,875<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>28,875
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(505,35)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">31,977<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>31,977
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(529,37)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">31,865<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>31,865
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(552,83)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">29,485<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>29,485
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(26,204)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(576,72)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">30,074<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>30,074
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(59,69)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(599,26)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">32,407<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>32,407
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(92,127)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(623,46)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">31,399<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>31,399
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(125,73)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(646,28)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">32,339<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>32,339
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(158,57)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(670,22)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">32,611<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>32,611
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(191,59)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(693,23)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">32,578<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>32,578
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(224,43)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-data-label-hidden" data-z-index="1" transform="translate(717,18)" style="cursor: pointer; pointer-events: none;" opacity="0"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">32,847<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>32,847
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(258,231)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(741,80)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">29,619<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>29,619
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(291,116)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(764,42)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">31,587<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>31,587
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(324,9)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(788,6)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">33,436<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>33,436
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(355,136)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(804,49)" style="cursor: pointer;"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">31,245<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>31,245
 								</text></g>
 						</g>
-						<g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(195,359)">
+						<g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(425,359)">
 							<rect fill="none" class="highcharts-legend-box" rx="0" ry="0" stroke="#999999" stroke-width="0" x="0" y="0" width="72" height="26"></rect>
 							<g data-z-index="1">
 								<g>
@@ -214,20 +294,8 @@
 								</g>
 							</g>
 						</g>
-						<g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="74.134391531018" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0) rotate(-45 74.134391531018 317)" y="317" opacity="1">202301</text><text x="107.217724864354" text-anchor="end" transform="translate(0,0) rotate(-45 107.217724864354 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202302</text><text x="140.30105819768403" text-anchor="end" transform="translate(0,0) rotate(-45 140.30105819768403 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202303</text><text x="173.38439153102402" text-anchor="end" transform="translate(0,0) rotate(-45 173.38439153102402 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202304</text><text x="206.46772486435404" text-anchor="end" transform="translate(0,0) rotate(-45 206.46772486435404 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202305</text><text x="239.551058197684" text-anchor="end" transform="translate(0,0) rotate(-45 239.551058197684 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202306</text><text x="272.634391531024" text-anchor="end" transform="translate(0,0) rotate(-45 272.634391531024 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202307</text><text x="305.71772486435395" text-anchor="end" transform="translate(0,0) rotate(-45 305.71772486435395 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202308</text><text x="338.801058197684" text-anchor="end" transform="translate(0,0) rotate(-45 338.801058197684 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202309</text><text x="371.884391531024" text-anchor="end" transform="translate(0,0) rotate(-45 371.884391531024 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202310</text><text x="404.96772486435395" text-anchor="end" transform="translate(0,0) rotate(-45 404.96772486435395 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202311</text><text x="438.051058197684" text-anchor="end" transform="translate(0,0) rotate(-45 438.051058197684 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202312</text></g>
-						<g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="40" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">29k</text><text x="40" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="247" opacity="1">30k</text><text x="40" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="189" opacity="1">31k</text><text x="40" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="130" opacity="1">32k</text><text x="40" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="72" opacity="1">33k</text><text x="40" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="14" opacity="1">34k</text></g><text x="452" class="highcharts-credits" text-anchor="end" data-z-index="8" y="395" style="cursor: pointer; color: rgb(153, 153, 153); font-size: 9px; fill: rgb(153, 153, 153);">Highcharts.com</text>
-						<g class="highcharts-label highcharts-tooltip highcharts-color-0" data-z-index="8" style="cursor: default; white-space: nowrap; pointer-events: none;" transform="translate(492,35)" opacity="0" visibility="hidden">
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 106.5 0.5 C 109.5 0.5 109.5 0.5 109.5 3.5 L 109.5 44.5 C 109.5 47.5 109.5 47.5 106.5 47.5 L 60.5 47.5 L 54.5 53.5 L 48.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="5" stroke="#000000" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path>
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 106.5 0.5 C 109.5 0.5 109.5 0.5 109.5 3.5 L 109.5 44.5 C 109.5 47.5 109.5 47.5 106.5 47.5 L 60.5 47.5 L 54.5 53.5 L 48.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="3" stroke="#000000" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path>
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 106.5 0.5 C 109.5 0.5 109.5 0.5 109.5 3.5 L 109.5 44.5 C 109.5 47.5 109.5 47.5 106.5 47.5 L 60.5 47.5 L 54.5 53.5 L 48.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="#000000" stroke-opacity="0.15" transform="translate(1, 1)">
-							</path>
-							<path fill="rgba(247,247,247,0.85)" class="highcharts-label-box highcharts-tooltip-box" d="M 3.5 0.5 L 106.5 0.5 C 109.5 0.5 109.5 0.5 109.5 3.5 L 109.5 44.5 C 109.5 47.5 109.5 47.5 106.5 47.5 L 60.5 47.5 L 54.5 53.5 L 48.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="#7CB5EC"></path><text x="8" data-z-index="1" y="18" style="color: rgb(51, 51, 51); font-size: 12px; fill: rgb(51, 51, 51);">
-								<tspan style="font-size: 10px;">202306</tspan>
-								<tspan class="highcharts-br" dy="15" x="8">&ZeroWidthSpace;</tspan>
-								<tspan style="color: rgb(124, 181, 236); fill: rgb(124, 181, 236);">●</tspan> 환자수: <tspan style="font-weight: bold;">32,611</tspan>
-								<tspan class="highcharts-br">&ZeroWidthSpace;</tspan>
-							</text>
-						</g>
+						<g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="79.35661375323978" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0) rotate(-45 79.35661375323978 317)" y="317" opacity="1">202101</text><text x="102.88439153102179" text-anchor="end" transform="translate(0,0) rotate(-45 102.88439153102179 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202102</text><text x="126.41216930879179" text-anchor="end" transform="translate(0,0) rotate(-45 126.41216930879179 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202103</text><text x="149.9399470865718" text-anchor="end" transform="translate(0,0) rotate(-45 149.9399470865718 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202104</text><text x="173.4677248643518" text-anchor="end" transform="translate(0,0) rotate(-45 173.4677248643518 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202105</text><text x="196.9955026421318" text-anchor="end" transform="translate(0,0) rotate(-45 196.9955026421318 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202106</text><text x="220.5232804199118" text-anchor="end" transform="translate(0,0) rotate(-45 220.5232804199118 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202107</text><text x="244.0510581976818" text-anchor="end" transform="translate(0,0) rotate(-45 244.0510581976818 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202108</text><text x="267.57883597546174" text-anchor="end" transform="translate(0,0) rotate(-45 267.57883597546174 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202109</text><text x="291.10661375324173" text-anchor="end" transform="translate(0,0) rotate(-45 291.10661375324173 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202110</text><text x="314.6343915310217" text-anchor="end" transform="translate(0,0) rotate(-45 314.6343915310217 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202111</text><text x="338.16216930879176" text-anchor="end" transform="translate(0,0) rotate(-45 338.16216930879176 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202112</text><text x="361.68994708657175" text-anchor="end" transform="translate(0,0) rotate(-45 361.68994708657175 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202201</text><text x="385.21772486435174" text-anchor="end" transform="translate(0,0) rotate(-45 385.21772486435174 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202202</text><text x="408.7455026421317" text-anchor="end" transform="translate(0,0) rotate(-45 408.7455026421317 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202203</text><text x="432.27328041991177" text-anchor="end" transform="translate(0,0) rotate(-45 432.27328041991177 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202204</text><text x="455.80105819768175" text-anchor="end" transform="translate(0,0) rotate(-45 455.80105819768175 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202205</text><text x="479.32883597546174" text-anchor="end" transform="translate(0,0) rotate(-45 479.32883597546174 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202206</text><text x="502.85661375324173" text-anchor="end" transform="translate(0,0) rotate(-45 502.85661375324173 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202207</text><text x="526.3843915310217" text-anchor="end" transform="translate(0,0) rotate(-45 526.3843915310217 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202208</text><text x="549.9121693087917" text-anchor="end" transform="translate(0,0) rotate(-45 549.9121693087917 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202209</text><text x="573.4399470865717" text-anchor="end" transform="translate(0,0) rotate(-45 573.4399470865717 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202210</text><text x="596.9677248643518" text-anchor="end" transform="translate(0,0) rotate(-45 596.9677248643518 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202211</text><text x="620.4955026421318" text-anchor="end" transform="translate(0,0) rotate(-45 620.4955026421318 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202212</text><text x="644.0232804199118" text-anchor="end" transform="translate(0,0) rotate(-45 644.0232804199118 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202301</text><text x="667.5510581976818" text-anchor="end" transform="translate(0,0) rotate(-45 667.5510581976818 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202302</text><text x="691.0788359754617" text-anchor="end" transform="translate(0,0) rotate(-45 691.0788359754617 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202303</text><text x="714.6066137532417" text-anchor="end" transform="translate(0,0) rotate(-45 714.6066137532417 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202304</text><text x="738.1343915310217" text-anchor="end" transform="translate(0,0) rotate(-45 738.1343915310217 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202305</text><text x="761.6621693087917" text-anchor="end" transform="translate(0,0) rotate(-45 761.6621693087917 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202306</text><text x="785.1899470865717" text-anchor="end" transform="translate(0,0) rotate(-45 785.1899470865717 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202307</text><text x="808.7177248643518" text-anchor="end" transform="translate(0,0) rotate(-45 808.7177248643518 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202308</text><text x="832.2455026421318" text-anchor="end" transform="translate(0,0) rotate(-45 832.2455026421318 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202309</text><text x="855.7732804199118" text-anchor="end" transform="translate(0,0) rotate(-45 855.7732804199118 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202310</text><text x="879.3010581976818" text-anchor="end" transform="translate(0,0) rotate(-45 879.3010581976818 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202311</text><text x="902.8288359754617" text-anchor="end" transform="translate(0,0) rotate(-45 902.8288359754617 317)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="317" opacity="1">202312</text></g>
+						<g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="50" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">20k</text><text x="50" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="257" opacity="1">22.5k</text><text x="50" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="208" opacity="1">25k</text><text x="50" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="160" opacity="1">27.5k</text><text x="50" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="111" opacity="1">30k</text><text x="50" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="63" opacity="1">32.5k</text><text x="50" text-anchor="end" transform="translate(0,0)" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" y="14" opacity="1">35k</text></g><text x="912" class="highcharts-credits" text-anchor="end" data-z-index="8" y="395" style="cursor: pointer; color: rgb(153, 153, 153); font-size: 9px; fill: rgb(153, 153, 153);">Highcharts.com</text>
 					</svg>
 				</div>
 			</div>
@@ -235,117 +303,113 @@
 		<h3 class="blt01">연령구간별 요양급여비용총액 비율 <span>(단위: %, 원)</span></h3>
 		<div class="chartBox">
 			<div id="rvdRpeAmtRateChart" data-highcharts-chart="1" style="overflow: hidden;">
-				<div id="highcharts-9wd1jge-17" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 462px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;">
-					<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="462" height="400" viewBox="0 0 462 400" role="img" aria-label="">
+				<div id="highcharts-8rys5mj-41" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 922px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;">
+					<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="922" height="400" viewBox="0 0 922 400" role="img" aria-label="">
 						<desc>Created with Highcharts 10.3.3</desc>
 						<defs>
-							<clipPath id="highcharts-9wd1jge-27-">
-								<rect x="0" y="0" width="442" height="375" fill="none"></rect>
+							<clipPath id="highcharts-8rys5mj-51-">
+								<rect x="0" y="0" width="902" height="375" fill="none"></rect>
 							</clipPath>
 						</defs>
-						<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="462" height="400" rx="0" ry="0"></rect>
-						<rect fill="none" class="highcharts-plot-background" x="10" y="10" width="442" height="375">
+						<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="922" height="400" rx="0" ry="0"></rect>
+						<rect fill="none" class="highcharts-plot-background" x="10" y="10" width="902" height="375">
 						</rect>
 						<g class="highcharts-pane-group" data-z-index="0"></g>
-						<rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="442" height="375"></rect>
+						<rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="902" height="375"></rect>
 						<g class="highcharts-series-group" data-z-index="3">
 							<g class="highcharts-series highcharts-series-0 highcharts-pie-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" style="cursor: pointer;" clip-path="none">
-								<path fill="#D5E9E9" d="M 409.75827641395557 207.06346378050912 A 150 150 0 0 1 510.1964875528053 50.16129874813251 L 510.52184430245325 51.10689008981163 A 149 149 0 0 0 410.75322123786253 206.96304068863907 Z" class="highcharts-halo highcharts-color-7" data-z-index="-1" fill-opacity="0.25" visibility="hidden"></path>
-								<path fill="#7CB5EC" d="M 211.48004002603787 89.50000203265594 A 98 98 0 0 1 211.48004002603787 89.50000203265594 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path>
-								<path fill="#FDA0A4" d="M 211.57804001765186 89.5000310726802 A 98 98 0 0 1 211.97003822370968 89.50112723062448 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path>
-								<path fill="#E4D354" d="M 212.0680368451268 89.50164626820215 A 98 98 0 0 1 215.3010863211011 89.57374334337324 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-2"></path>
-								<path fill="#90ED7D" d="M 215.39901066089368 89.57759339218508 A 98 98 0 0 1 230.75789216258923 91.41080399205077 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-3"></path>
-								<path fill="#F7A35C" d="M 230.853971713637 91.43010992559772 A 98 98 0 0 1 281.8552456218724 119.27874661451904 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-4"></path>
-								<path fill="#8085E9" d="M 281.92343168626786 119.34913595903889 A 98 98 0 0 1 283.3389668465611 254.15705395844236 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-5"></path>
-								<path fill="#F15C80" d="M 283.2722738842317 254.22885958479156 A 98 98 0 0 1 114.00529747077297 197.43896265902697 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-6"></path>
-								<path fill="#D5E9E9" d="M 113.99540725711765 197.34146300326597 A 98 98 0 0 1 179.61503853449946 94.83204851544659 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-7"></path>
-								<path fill="#FDDEDE" d="M 179.7077224130188 94.80020989326712 A 98 98 0 0 1 211.363879966069 89.50009453404374 L 211.5 187.5 A 0 0 0 0 0 211.5 187.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-8"></path>
+								<path fill="#7CB5EC" d="M 450.96914350964016 42.00000314232017 A 151.5 151.5 0 0 1 450.96914350964016 42.00000314232017 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path>
+								<path fill="#FDA0A4" d="M 451.1206434966761 42.000048035827064 A 151.5 151.5 0 0 1 451.72664072338796 42.00174260652662 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path>
+								<path fill="#E4D354" d="M 451.87813859221137 42.00254499625129 A 151.5 151.5 0 0 1 457.3303000321163 42.13231090651021 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-2"></path>
+								<path fill="#90ED7D" d="M 457.4816645308321 42.13871688932551 A 151.5 151.5 0 0 1 482.9958872602647 45.41720829742428 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-3"></path>
+								<path fill="#F7A35C" d="M 483.1439540293445 45.449278220741576 A 151.5 151.5 0 0 1 563.6916348027808 92.24366466498653 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-4"></path>
+								<path fill="#8085E9" d="M 563.792834775427 92.35640690917083 A 151.5 151.5 0 0 1 556.4423342609086 302.2849444804326 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-5"></path>
+								<path fill="#F15C80" d="M 556.3334966133964 302.3903324046521 A 151.5 151.5 0 0 1 299.7966795205763 202.9765962242084 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-6"></path>
+								<path fill="#D5E9E9" d="M 299.78727852758544 202.82538819063183 A 151.5 151.5 0 0 1 403.86277336622186 49.51968236847151 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-7"></path>
+								<path fill="#FDDEDE" d="M 404.0067772284681 49.47261713984673 A 151.5 151.5 0 0 1 450.78956953938217 42.00014614191457 L 451 193.5 A 0 0 0 0 0 451 193.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-8"></path>
 							</g>
 							<g class="highcharts-markers highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g>
 						</g>
 						<g class="highcharts-exporting-group" data-z-index="3">
-							<g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" style="cursor: pointer;" transform="translate(428,10)">
+							<g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" style="cursor: pointer;" transform="translate(888,10)">
 								<title>Chart context menu</title>
 								<rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="24" height="22" rx="2" ry="2" stroke="none" stroke-width="1"></rect>
 								<path fill="#666666" d="M 6 6.5 L 20 6.5 M 6 11.5 L 20 11.5 M 6 16.5 L 20 16.5" class="highcharts-button-symbol" data-z-index="1" stroke="#666666" stroke-width="3">
 								</path><text x="0" data-z-index="1" y="15.5" style="color: rgb(51, 51, 51); font-weight: normal; fill: rgb(51, 51, 51);"></text>
 							</g>
-						</g><text x="10" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="231" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="397"></text>
+						</g><text x="10" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="461" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="397"></text>
 						<g class="highcharts-data-labels highcharts-series-0 highcharts-pie-series highcharts-tracker" data-z-index="6" opacity="1" transform="translate(10,10) scale(1 1)" style="cursor: pointer;">
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-0" stroke-width="1" stroke="#7CB5EC" d="M 216.540268515442 59.500006334192875 C 211.540268515442 59.500006334192875 211.53460575546472 77.500005443447 211.532718168803 83.5000051465317 L 211.53083058214128 89.50000484961642" opacity="1" visibility="hidden"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-1" stroke-width="1" stroke="#FDA0A4" d="M 216.9282909448252 59.5 C 211.9282909448252 59.5 211.8680625307084 77.50061577457133 211.84798639266975 83.50058218686743 L 211.82791025463112 89.50054859916354" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-2" stroke-width="1" stroke="#E4D354" d="M 291.11903242471055 83.5 C 286.11903242471055 83.5 214.04674781076392 77.52948542637273 213.90783429381315 83.52787713038876 L 213.7689207768624 89.52626883440479" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-3" stroke-width="1" stroke="#90ED7D" d="M 316.41996797437434 107.5 C 311.41996797437434 107.5 224.6369749530958 78.28727231186956 223.92041268292695 84.24433018576758 L 223.2038504127581 90.2013880596656" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-4" stroke-width="1" stroke="#F7A35C" d="M 331.59995655950524 131.5 C 326.59995655950524 131.5 264.2795134817237 90.98925988972758 261.40063092817513 96.25348207756062 L 258.52174837462655 101.51770426539366" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-5" stroke-width="1" stroke="#8085E9" d="M 344.49364974584546 186.2250001028118 C 339.49364974584546 186.2250001028118 321.49454275033594 186.40429696335391 315.49484041849945 186.4640625835346 L 309.49513808666296 186.52382820371528" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-6" stroke-width="1" stroke="#F15C80" d="M 165.73878523950853 308.83640579500076 C 170.73878523950853 308.83640579500076 176.47083106520267 291.77347373007876 178.38151300710072 286.0858297084381 L 180.29219494899877 280.39818568679743" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-7" stroke-width="1" stroke="#D5E9E9" d="M 98.69946055152276 118.48519220763343 C 103.69946055152276 118.48519220763343 118.85891141146487 128.190399553435 123.91206169811224 131.42546866870217 L 128.9652119847596 134.66053778396935" opacity="1"></path>
-							<path fill="none" class="highcharts-data-label-connector highcharts-color-8" stroke-width="1" stroke="#FDDEDE" d="M 185.41972190547415 61.24778467109002 C 190.41972190547415 61.24778467109002 193.38413601251685 79.00200245171797 194.37227404819774 84.92007504526063 L 195.36041208387863 90.83814763880329" opacity="1"></path>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" style="cursor: pointer;" transform="translate(222,50)" opacity="1" visibility="hidden"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-0" stroke-width="1" stroke="#7CB5EC" d="M 456.0835071531176 12 C 451.0835071531176 12 451.0752254519626 30.000017305409557 451.0724648849181 36.00001667034866 L 451.0697043178736 42.00001603528776">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-1" stroke-width="1" stroke="#FDA0A4" d="M 546.1997782702374 36 C 541.1997782702374 36 451.5695810246894 30.00099212088071 451.5486789687375 36.000955712774996 L 451.52777691278555 42.00091930466928">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-2" stroke-width="1" stroke="#E4D354" d="M 578.9634091915152 60 C 573.9634091915152 60 454.99377873359884 30.048784857906156 454.84721804612735 36.04699458789125 L 454.70065735865586 42.04520431787634">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-3" stroke-width="1" stroke="#90ED7D" d="M 600.7480569817778 84 C 595.7480569817778 84 471.88518849105157 31.339403979594238 471.11875955560015 37.2902515399761 L 470.35233062014873 43.24109910035796">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-4" stroke-width="1" stroke="#F7A35C" d="M 616.099968769516 108 C 611.099968769516 108 533.200951687847 52.166162786075006 530.1844030020544 57.35272561961354 L 527.1678543162618 62.53928845315207">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-5" stroke-width="1" stroke="#8085E9" d="M 637.3849736047066 199.960754632384 C 632.3849736047066 199.960754632384 614.3963811810993 199.32001863578395 608.4001837065636 199.1064399702506 L 602.4039862320278 198.89286130471723">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-6" stroke-width="1" stroke="#F15C80" d="M 380.34567032935473 362.70921663874645 C 385.34567032935473 362.70921663874645 391.856843519832 345.9281373026724 394.0272345833244 340.33444419064773 L 396.1976256468168 334.7407510786231">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-7" stroke-width="1" stroke="#D5E9E9" d="M 295.9072019754832 91.44902263490269 C 300.9072019754832 91.44902263490269 315.7924381432039 101.56978072069748 320.75418353244413 104.94336674929573 L 325.71592892168434 108.31695277789399">
+							</path>
+							<path fill="none" class="highcharts-data-label-connector highcharts-color-8" stroke-width="1" stroke="#FDDEDE" d="M 417.5311622287587 14.246617114335223 C 422.5311622287587 14.246617114335223 425.3545180407826 32.02381211126065 426.29563664479053 37.949543776902466 L 427.2367552487985 43.87527544254428">
+							</path>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" style="cursor: pointer;" transform="translate(461,2)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
 										<tspan style="font-weight: bold;">0_9세</tspan>: 0.0 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>
 									<tspan style="font-weight: bold;">0_9세</tspan>: 0.0 %
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-1" data-z-index="1" style="cursor: pointer;" transform="translate(222,50)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-1" data-z-index="1" style="cursor: pointer;" transform="translate(551,26)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
 										<tspan style="font-weight: bold;">10_19세</tspan>: 0.1 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>
 									<tspan style="font-weight: bold;">10_19세</tspan>: 0.1 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-2" data-z-index="1" style="cursor: pointer;" transform="translate(296,74)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">20_29세</tspan>: 0.5 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">20_29세</tspan>: 0.5 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-3" data-z-index="1" style="cursor: pointer;" transform="translate(321,98)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">30_39세</tspan>: 2.5 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">30_39세</tspan>: 2.5 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-4" data-z-index="1" style="cursor: pointer;" transform="translate(337,122)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">40_49세</tspan>: 9.6 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">40_49세</tspan>: 9.6 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-5" data-z-index="1" style="cursor: pointer;" transform="translate(349,176)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">50_59세</tspan>: 24.2 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">50_59세</tspan>: 24.2 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-6" data-z-index="1" style="cursor: pointer;" transform="translate(67,299)" opacity="1">
-								<text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">60_69세</tspan>: 36.5 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">60_69세</tspan>: 36.5 %
-								</text>
-							</g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-7" data-z-index="1" style="cursor: pointer;" transform="translate(0,108)" opacity="1"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
-									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">70_79세</tspan>: 21.3 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
-									</tspan>
-									<tspan style="font-weight: bold;">70_79세</tspan>: 21.3 %
 								</text></g>
-							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-8" data-z-index="1" style="cursor: pointer;" transform="translate(90,51)" opacity="1"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-2" data-z-index="1" style="cursor: pointer;" transform="translate(584,50)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
 									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
-										<tspan style="font-weight: bold;">80세이상</tspan>: 5.3 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+										<tspan style="font-weight: bold;">20_29세</tspan>: 0.6 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
 									</tspan>
-									<tspan style="font-weight: bold;">80세이상</tspan>: 5.3 %
+									<tspan style="font-weight: bold;">20_29세</tspan>: 0.6 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-3" data-z-index="1" style="cursor: pointer;" transform="translate(606,74)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">30_39세</tspan>: 2.7 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">30_39세</tspan>: 2.7 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-4" data-z-index="1" style="cursor: pointer;" transform="translate(621,98)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">40_49세</tspan>: 10.0 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">40_49세</tspan>: 10.0 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-5" data-z-index="1" style="cursor: pointer;" transform="translate(642,190)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">50_59세</tspan>: 24.4 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">50_59세</tspan>: 24.4 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-6" data-z-index="1" style="cursor: pointer;" transform="translate(281,353)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">60_69세</tspan>: 36.3 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">60_69세</tspan>: 36.3 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-7" data-z-index="1" style="cursor: pointer;" transform="translate(197,81)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">70_79세</tspan>: 21.0 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">70_79세</tspan>: 21.0 %
+								</text></g>
+							<g class="highcharts-label highcharts-data-label highcharts-data-label-color-8" data-z-index="1" style="cursor: pointer;" transform="translate(322,4)"><text x="5" data-z-index="1" y="16" style="color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; fill: rgb(0, 0, 0);">
+									<tspan class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">
+										<tspan style="font-weight: bold;">80세이상</tspan>: 5.0 %<tspan x="5" dy="0"> &ZeroWidthSpace;</tspan>
+									</tspan>
+									<tspan style="font-weight: bold;">80세이상</tspan>: 5.0 %
 								</text></g>
 						</g>
 						<g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" visibility="hidden">
@@ -353,17 +417,7 @@
 							<g data-z-index="1">
 								<g></g>
 							</g>
-						</g><text x="452" class="highcharts-credits" text-anchor="end" data-z-index="8" y="395" style="cursor: pointer; color: rgb(153, 153, 153); font-size: 9px; fill: rgb(153, 153, 153);">Highcharts.com</text>
-						<g class="highcharts-label highcharts-tooltip highcharts-color-7" data-z-index="8" style="cursor: default; white-space: nowrap; pointer-events: none;" transform="translate(495,31)" opacity="0" visibility="hidden">
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 55.5 0.5 C 58.5 0.5 58.5 0.5 58.5 3.5 L 58.5 44.5 C 58.5 47.5 58.5 47.5 55.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="5" stroke="#000000" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path>
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 55.5 0.5 C 58.5 0.5 58.5 0.5 58.5 3.5 L 58.5 44.5 C 58.5 47.5 58.5 47.5 55.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="3" stroke="#000000" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path>
-							<path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 55.5 0.5 C 58.5 0.5 58.5 0.5 58.5 3.5 L 58.5 44.5 C 58.5 47.5 58.5 47.5 55.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="#000000" stroke-opacity="0.15" transform="translate(1, 1)">
-							</path>
-							<path fill="rgba(247,247,247,0.85)" class="highcharts-label-box highcharts-tooltip-box" d="M 3.5 0.5 L 55.5 0.5 C 58.5 0.5 58.5 0.5 58.5 3.5 L 58.5 44.5 C 58.5 47.5 58.5 47.5 55.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke-width="1" stroke="#D5E9E9"></path><text x="8" data-z-index="1" y="18" style="color: rgb(51, 51, 51); font-size: 12px; fill: rgb(51, 51, 51);">
-								<tspan style="font-size: 10px;">70_79세</tspan>
-								<tspan class="highcharts-br" dy="15" x="8">&ZeroWidthSpace;</tspan>: <tspan style="font-weight: bold;">21.3%</tspan>
-							</text>
-						</g>
+						</g><text x="912" class="highcharts-credits" text-anchor="end" data-z-index="8" y="395" style="cursor: pointer; color: rgb(153, 153, 153); font-size: 9px; fill: rgb(153, 153, 153);">Highcharts.com</text>
 					</svg>
 				</div>
 			</div>
@@ -372,10 +426,130 @@
 		<div class="btnAreaLR"><a href="#none" id="exlBtn" class="btn_down excel">엑셀 다운로드</a></div>
 		<div class="tblType02 data webScroll" tabindex="0">
 			<table>
-				<caption>이 테이블은 4단질병 성별/연령10세구간별 현황으로 진료년월 , 2023년 01월, 2023년 02월, 2023년 03월, 2023년 04월, 2023년 05월, 2023년 06월, 항목, 성별구분, 연령구분10세, 환자수, 내원일수, 청구건수, 요양급여비용총액, 보험자부담금 정보를 제공합니다.</caption>
+				<caption>이 테이블은 4단질병 성별/연령10세구간별 현황으로 진료년월 , 2021년 01월, 2021년 02월, 2021년 03월, 2021년 04월, 2021년 05월, 2021년 06월, 항목, 성별구분, 연령구분10세, 환자수, 내원일수, 청구건수, 요양급여비용총액, 보험자부담금 정보를 제공합니다.</caption>
 				<colgroup>
 					<col class="w300px fix">
 					<col>
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col class="w150px fix">
 					<col>
 					<col>
 					<col>
@@ -443,6 +617,30 @@
 						<th scope="col"></th>
 						<th scope="col"></th>
 						<th scope="col">진료년월</th>
+						<th scope="row" colspan="5">2021년 01월</th>
+						<th scope="row" colspan="5">2021년 02월</th>
+						<th scope="row" colspan="5">2021년 03월</th>
+						<th scope="row" colspan="5">2021년 04월</th>
+						<th scope="row" colspan="5">2021년 05월</th>
+						<th scope="row" colspan="5">2021년 06월</th>
+						<th scope="row" colspan="5">2021년 07월</th>
+						<th scope="row" colspan="5">2021년 08월</th>
+						<th scope="row" colspan="5">2021년 09월</th>
+						<th scope="row" colspan="5">2021년 10월</th>
+						<th scope="row" colspan="5">2021년 11월</th>
+						<th scope="row" colspan="5">2021년 12월</th>
+						<th scope="row" colspan="5">2022년 01월</th>
+						<th scope="row" colspan="5">2022년 02월</th>
+						<th scope="row" colspan="5">2022년 03월</th>
+						<th scope="row" colspan="5">2022년 04월</th>
+						<th scope="row" colspan="5">2022년 05월</th>
+						<th scope="row" colspan="5">2022년 06월</th>
+						<th scope="row" colspan="5">2022년 07월</th>
+						<th scope="row" colspan="5">2022년 08월</th>
+						<th scope="row" colspan="5">2022년 09월</th>
+						<th scope="row" colspan="5">2022년 10월</th>
+						<th scope="row" colspan="5">2022년 11월</th>
+						<th scope="row" colspan="5">2022년 12월</th>
 						<th scope="row" colspan="5">2023년 01월</th>
 						<th scope="row" colspan="5">2023년 02월</th>
 						<th scope="row" colspan="5">2023년 03월</th>
@@ -520,6 +718,126 @@
 						<th scope="col">청구건수</th>
 						<th scope="col">요양급여비용총액</th>
 						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
+						<th scope="col">환자수</th>
+						<th scope="col">내원일수</th>
+						<th scope="col">청구건수</th>
+						<th scope="col">요양급여비용총액</th>
+						<th scope="col">보험자부담금</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -527,6 +845,126 @@
 						<th rowspan="21" scope="row" class="sky">I671</th>
 						<th scope="row">계</th>
 						<th scope="row">계</th>
+						<td>22,890 </td>
+						<td>47,800</td>
+						<td>31,821</td>
+						<td>22,289,347</td>
+						<td>18,331,494</td>
+						<td>22,367 </td>
+						<td>43,027</td>
+						<td>30,129</td>
+						<td>18,829,776</td>
+						<td>15,293,132</td>
+						<td>26,727 </td>
+						<td>52,945</td>
+						<td>37,294</td>
+						<td>25,182,984</td>
+						<td>20,705,736</td>
+						<td>26,644 </td>
+						<td>51,256</td>
+						<td>36,973</td>
+						<td>22,399,621</td>
+						<td>18,107,350</td>
+						<td>25,825 </td>
+						<td>49,748</td>
+						<td>35,209</td>
+						<td>21,796,306</td>
+						<td>17,630,362</td>
+						<td>27,807 </td>
+						<td>53,131</td>
+						<td>38,296</td>
+						<td>23,282,705</td>
+						<td>18,803,660</td>
+						<td>27,523 </td>
+						<td>52,929</td>
+						<td>38,026</td>
+						<td>23,397,718</td>
+						<td>18,819,317</td>
+						<td>26,754 </td>
+						<td>51,847</td>
+						<td>36,741</td>
+						<td>23,686,592</td>
+						<td>19,149,105</td>
+						<td>25,494 </td>
+						<td>46,633</td>
+						<td>34,032</td>
+						<td>20,212,728</td>
+						<td>16,253,117</td>
+						<td>26,377 </td>
+						<td>49,280</td>
+						<td>35,156</td>
+						<td>22,462,801</td>
+						<td>18,150,307</td>
+						<td>29,261 </td>
+						<td>54,328</td>
+						<td>39,859</td>
+						<td>24,016,412</td>
+						<td>19,278,586</td>
+						<td>28,956 </td>
+						<td>52,735</td>
+						<td>39,790</td>
+						<td>23,236,427</td>
+						<td>18,628,153</td>
+						<td>26,623 </td>
+						<td>51,104</td>
+						<td>36,057</td>
+						<td>22,718,137</td>
+						<td>18,350,711</td>
+						<td>24,394 </td>
+						<td>44,808</td>
+						<td>32,368</td>
+						<td>19,399,313</td>
+						<td>15,572,473</td>
+						<td>27,447 </td>
+						<td>50,460</td>
+						<td>37,407</td>
+						<td>21,978,560</td>
+						<td>17,647,243</td>
+						<td>27,247 </td>
+						<td>49,621</td>
+						<td>36,969</td>
+						<td>21,778,621</td>
+						<td>17,321,155</td>
+						<td>30,422 </td>
+						<td>57,921</td>
+						<td>42,153</td>
+						<td>27,017,934</td>
+						<td>21,739,306</td>
+						<td>30,180 </td>
+						<td>56,784</td>
+						<td>41,356</td>
+						<td>26,138,760</td>
+						<td>20,965,367</td>
+						<td>30,058 </td>
+						<td>55,587</td>
+						<td>40,990</td>
+						<td>25,442,122</td>
+						<td>20,411,660</td>
+						<td>30,812 </td>
+						<td>57,106</td>
+						<td>42,364</td>
+						<td>25,704,483</td>
+						<td>20,553,388</td>
+						<td>29,736 </td>
+						<td>52,239</td>
+						<td>39,789</td>
+						<td>22,599,671</td>
+						<td>18,003,536</td>
+						<td>28,875 </td>
+						<td>52,205</td>
+						<td>38,795</td>
+						<td>24,425,810</td>
+						<td>19,617,600</td>
+						<td>31,977 </td>
+						<td>57,793</td>
+						<td>43,675</td>
+						<td>25,943,809</td>
+						<td>20,695,918</td>
+						<td>31,865 </td>
+						<td>56,183</td>
+						<td>43,203</td>
+						<td>25,487,697</td>
+						<td>20,308,370</td>
 						<td>29,485 </td>
 						<td>54,232</td>
 						<td>39,465</td>
@@ -591,6 +1029,126 @@
 					<tr>
 						<th scope="row" rowspan="10">남</th>
 						<th scope="row">소계</th>
+						<td>6,907 </td>
+						<td>13,908</td>
+						<td>9,606</td>
+						<td>6,830,083</td>
+						<td>5,625,940</td>
+						<td>6,659 </td>
+						<td>12,419</td>
+						<td>9,002</td>
+						<td>5,363,614</td>
+						<td>4,335,693</td>
+						<td>7,775 </td>
+						<td>14,790</td>
+						<td>10,735</td>
+						<td>7,287,361</td>
+						<td>6,001,688</td>
+						<td>7,825 </td>
+						<td>14,319</td>
+						<td>10,649</td>
+						<td>6,176,090</td>
+						<td>4,976,431</td>
+						<td>7,441 </td>
+						<td>14,205</td>
+						<td>10,113</td>
+						<td>6,232,150</td>
+						<td>5,042,933</td>
+						<td>8,099 </td>
+						<td>15,418</td>
+						<td>11,175</td>
+						<td>6,959,284</td>
+						<td>5,646,591</td>
+						<td>8,140 </td>
+						<td>15,285</td>
+						<td>11,160</td>
+						<td>6,828,726</td>
+						<td>5,497,996</td>
+						<td>7,917 </td>
+						<td>14,682</td>
+						<td>10,866</td>
+						<td>6,606,541</td>
+						<td>5,311,829</td>
+						<td>7,589 </td>
+						<td>13,719</td>
+						<td>10,113</td>
+						<td>6,036,023</td>
+						<td>4,837,689</td>
+						<td>7,736 </td>
+						<td>13,917</td>
+						<td>10,265</td>
+						<td>6,468,988</td>
+						<td>5,239,311</td>
+						<td>8,643 </td>
+						<td>15,741</td>
+						<td>11,704</td>
+						<td>7,039,139</td>
+						<td>5,661,096</td>
+						<td>8,695 </td>
+						<td>15,296</td>
+						<td>11,892</td>
+						<td>6,686,672</td>
+						<td>5,326,663</td>
+						<td>7,911 </td>
+						<td>15,080</td>
+						<td>10,700</td>
+						<td>6,833,915</td>
+						<td>5,507,806</td>
+						<td>7,104 </td>
+						<td>12,770</td>
+						<td>9,441</td>
+						<td>5,667,219</td>
+						<td>4,558,158</td>
+						<td>8,038 </td>
+						<td>14,292</td>
+						<td>10,920</td>
+						<td>6,347,659</td>
+						<td>5,088,414</td>
+						<td>7,890 </td>
+						<td>14,103</td>
+						<td>10,653</td>
+						<td>6,420,936</td>
+						<td>5,124,675</td>
+						<td>8,633 </td>
+						<td>16,008</td>
+						<td>11,893</td>
+						<td>7,485,211</td>
+						<td>6,049,840</td>
+						<td>8,750 </td>
+						<td>15,954</td>
+						<td>11,912</td>
+						<td>7,208,791</td>
+						<td>5,745,840</td>
+						<td>8,807 </td>
+						<td>16,164</td>
+						<td>11,947</td>
+						<td>7,596,273</td>
+						<td>6,132,775</td>
+						<td>9,057 </td>
+						<td>16,504</td>
+						<td>12,393</td>
+						<td>7,642,466</td>
+						<td>6,151,322</td>
+						<td>8,721 </td>
+						<td>15,135</td>
+						<td>11,695</td>
+						<td>6,352,810</td>
+						<td>5,029,992</td>
+						<td>8,417 </td>
+						<td>15,041</td>
+						<td>11,109</td>
+						<td>7,075,910</td>
+						<td>5,697,903</td>
+						<td>9,350 </td>
+						<td>16,472</td>
+						<td>12,655</td>
+						<td>7,217,392</td>
+						<td>5,735,640</td>
+						<td>9,525 </td>
+						<td>16,327</td>
+						<td>12,847</td>
+						<td>7,300,569</td>
+						<td>5,773,651</td>
 						<td>8,699 </td>
 						<td>15,951</td>
 						<td>11,577</td>
@@ -654,6 +1212,126 @@
 					</tr>
 					<tr>
 						<th scope="row">0_9세</th>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>22</td>
+						<td>11</td>
+						<td>5 </td>
+						<td>6</td>
+						<td>6</td>
+						<td>922</td>
+						<td>434</td>
+						<td>2 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>400</td>
+						<td>144</td>
+						<td>4 </td>
+						<td>8</td>
+						<td>5</td>
+						<td>3,556</td>
+						<td>3,191</td>
+						<td>2 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>53</td>
+						<td>7</td>
+						<td>3 </td>
+						<td>5</td>
+						<td>5</td>
+						<td>486</td>
+						<td>374</td>
+						<td>4 </td>
+						<td>7</td>
+						<td>7</td>
+						<td>2,109</td>
+						<td>1,682</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>30</td>
+						<td>5</td>
+						<td>2 </td>
+						<td>3</td>
+						<td>3</td>
+						<td>220</td>
+						<td>70</td>
+						<td>2 </td>
+						<td>3</td>
+						<td>3</td>
+						<td>371</td>
+						<td>126</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>4 </td>
+						<td>10</td>
+						<td>6</td>
+						<td>8,792</td>
+						<td>7,921</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>341</td>
+						<td>171</td>
+						<td>2 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>48</td>
+						<td>35</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>175</td>
+						<td>69</td>
+						<td>4 </td>
+						<td>10</td>
+						<td>6</td>
+						<td>8,300</td>
+						<td>7,722</td>
+						<td>6 </td>
+						<td>8</td>
+						<td>7</td>
+						<td>3,236</td>
+						<td>2,871</td>
+						<td>4 </td>
+						<td>11</td>
+						<td>4</td>
+						<td>9,015</td>
+						<td>8,290</td>
+						<td>2 </td>
+						<td>1</td>
+						<td>2</td>
+						<td>38</td>
+						<td>14</td>
+						<td>3 </td>
+						<td>5</td>
+						<td>5</td>
+						<td>1,005</td>
+						<td>708</td>
 						<td>4 </td>
 						<td>4</td>
 						<td>4</td>
@@ -717,6 +1395,126 @@
 					</tr>
 					<tr>
 						<th scope="row">10_19세</th>
+						<td>12 </td>
+						<td>15</td>
+						<td>15</td>
+						<td>2,840</td>
+						<td>1,160</td>
+						<td>9 </td>
+						<td>18</td>
+						<td>11</td>
+						<td>15,438</td>
+						<td>14,291</td>
+						<td>10 </td>
+						<td>13</td>
+						<td>13</td>
+						<td>3,383</td>
+						<td>1,678</td>
+						<td>15 </td>
+						<td>40</td>
+						<td>23</td>
+						<td>21,699</td>
+						<td>18,337</td>
+						<td>14 </td>
+						<td>18</td>
+						<td>17</td>
+						<td>3,661</td>
+						<td>2,280</td>
+						<td>14 </td>
+						<td>35</td>
+						<td>22</td>
+						<td>12,819</td>
+						<td>9,434</td>
+						<td>8 </td>
+						<td>14</td>
+						<td>14</td>
+						<td>2,965</td>
+						<td>1,809</td>
+						<td>15 </td>
+						<td>44</td>
+						<td>23</td>
+						<td>16,633</td>
+						<td>12,388</td>
+						<td>8 </td>
+						<td>37</td>
+						<td>8</td>
+						<td>28,384</td>
+						<td>24,016</td>
+						<td>14 </td>
+						<td>22</td>
+						<td>16</td>
+						<td>5,956</td>
+						<td>3,722</td>
+						<td>13 </td>
+						<td>19</td>
+						<td>14</td>
+						<td>3,918</td>
+						<td>2,124</td>
+						<td>14 </td>
+						<td>16</td>
+						<td>16</td>
+						<td>3,686</td>
+						<td>1,889</td>
+						<td>17 </td>
+						<td>35</td>
+						<td>32</td>
+						<td>7,721</td>
+						<td>4,955</td>
+						<td>13 </td>
+						<td>24</td>
+						<td>21</td>
+						<td>9,531</td>
+						<td>6,131</td>
+						<td>9 </td>
+						<td>23</td>
+						<td>21</td>
+						<td>6,543</td>
+						<td>3,713</td>
+						<td>10 </td>
+						<td>13</td>
+						<td>13</td>
+						<td>745</td>
+						<td>242</td>
+						<td>11 </td>
+						<td>19</td>
+						<td>18</td>
+						<td>5,294</td>
+						<td>3,030</td>
+						<td>16 </td>
+						<td>33</td>
+						<td>27</td>
+						<td>25,557</td>
+						<td>21,427</td>
+						<td>16 </td>
+						<td>20</td>
+						<td>20</td>
+						<td>1,901</td>
+						<td>839</td>
+						<td>19 </td>
+						<td>30</td>
+						<td>27</td>
+						<td>5,517</td>
+						<td>3,166</td>
+						<td>13 </td>
+						<td>19</td>
+						<td>19</td>
+						<td>4,043</td>
+						<td>2,512</td>
+						<td>17 </td>
+						<td>27</td>
+						<td>23</td>
+						<td>9,466</td>
+						<td>7,167</td>
+						<td>15 </td>
+						<td>18</td>
+						<td>18</td>
+						<td>4,873</td>
+						<td>2,999</td>
+						<td>10 </td>
+						<td>14</td>
+						<td>12</td>
+						<td>4,743</td>
+						<td>2,711</td>
 						<td>21 </td>
 						<td>33</td>
 						<td>29</td>
@@ -780,6 +1578,126 @@
 					</tr>
 					<tr>
 						<th scope="row">20_29세</th>
+						<td>75 </td>
+						<td>124</td>
+						<td>106</td>
+						<td>42,175</td>
+						<td>28,502</td>
+						<td>60 </td>
+						<td>105</td>
+						<td>84</td>
+						<td>54,381</td>
+						<td>43,319</td>
+						<td>56 </td>
+						<td>91</td>
+						<td>72</td>
+						<td>41,633</td>
+						<td>33,192</td>
+						<td>66 </td>
+						<td>102</td>
+						<td>94</td>
+						<td>26,295</td>
+						<td>15,826</td>
+						<td>75 </td>
+						<td>163</td>
+						<td>128</td>
+						<td>76,109</td>
+						<td>60,091</td>
+						<td>66 </td>
+						<td>118</td>
+						<td>91</td>
+						<td>53,581</td>
+						<td>41,529</td>
+						<td>80 </td>
+						<td>137</td>
+						<td>112</td>
+						<td>42,350</td>
+						<td>30,542</td>
+						<td>87 </td>
+						<td>177</td>
+						<td>126</td>
+						<td>92,981</td>
+						<td>75,574</td>
+						<td>79 </td>
+						<td>146</td>
+						<td>113</td>
+						<td>55,627</td>
+						<td>41,637</td>
+						<td>79 </td>
+						<td>128</td>
+						<td>104</td>
+						<td>67,521</td>
+						<td>53,039</td>
+						<td>79 </td>
+						<td>139</td>
+						<td>117</td>
+						<td>57,984</td>
+						<td>42,513</td>
+						<td>91 </td>
+						<td>150</td>
+						<td>130</td>
+						<td>63,687</td>
+						<td>48,140</td>
+						<td>83 </td>
+						<td>133</td>
+						<td>110</td>
+						<td>64,191</td>
+						<td>50,511</td>
+						<td>73 </td>
+						<td>116</td>
+						<td>101</td>
+						<td>47,538</td>
+						<td>33,769</td>
+						<td>71 </td>
+						<td>128</td>
+						<td>110</td>
+						<td>46,112</td>
+						<td>32,322</td>
+						<td>70 </td>
+						<td>149</td>
+						<td>102</td>
+						<td>99,715</td>
+						<td>78,518</td>
+						<td>81 </td>
+						<td>152</td>
+						<td>124</td>
+						<td>52,017</td>
+						<td>40,458</td>
+						<td>65 </td>
+						<td>117</td>
+						<td>94</td>
+						<td>23,450</td>
+						<td>14,026</td>
+						<td>90 </td>
+						<td>199</td>
+						<td>125</td>
+						<td>121,373</td>
+						<td>103,562</td>
+						<td>95 </td>
+						<td>178</td>
+						<td>140</td>
+						<td>71,341</td>
+						<td>53,784</td>
+						<td>84 </td>
+						<td>151</td>
+						<td>128</td>
+						<td>65,041</td>
+						<td>50,774</td>
+						<td>85 </td>
+						<td>148</td>
+						<td>123</td>
+						<td>66,206</td>
+						<td>51,249</td>
+						<td>73 </td>
+						<td>132</td>
+						<td>112</td>
+						<td>52,455</td>
+						<td>39,977</td>
+						<td>74 </td>
+						<td>115</td>
+						<td>101</td>
+						<td>40,155</td>
+						<td>27,965</td>
 						<td>85 </td>
 						<td>171</td>
 						<td>130</td>
@@ -843,6 +1761,126 @@
 					</tr>
 					<tr>
 						<th scope="row">30_39세</th>
+						<td>246 </td>
+						<td>503</td>
+						<td>355</td>
+						<td>307,107</td>
+						<td>254,289</td>
+						<td>229 </td>
+						<td>507</td>
+						<td>349</td>
+						<td>283,413</td>
+						<td>233,246</td>
+						<td>274 </td>
+						<td>519</td>
+						<td>404</td>
+						<td>298,259</td>
+						<td>240,402</td>
+						<td>245 </td>
+						<td>458</td>
+						<td>342</td>
+						<td>226,165</td>
+						<td>180,101</td>
+						<td>232 </td>
+						<td>552</td>
+						<td>348</td>
+						<td>318,261</td>
+						<td>267,373</td>
+						<td>308 </td>
+						<td>616</td>
+						<td>476</td>
+						<td>329,225</td>
+						<td>271,116</td>
+						<td>333 </td>
+						<td>660</td>
+						<td>510</td>
+						<td>249,333</td>
+						<td>190,469</td>
+						<td>303 </td>
+						<td>595</td>
+						<td>450</td>
+						<td>238,999</td>
+						<td>181,564</td>
+						<td>278 </td>
+						<td>491</td>
+						<td>373</td>
+						<td>186,068</td>
+						<td>142,797</td>
+						<td>273 </td>
+						<td>531</td>
+						<td>390</td>
+						<td>278,332</td>
+						<td>228,867</td>
+						<td>365 </td>
+						<td>661</td>
+						<td>539</td>
+						<td>266,812</td>
+						<td>203,200</td>
+						<td>367 </td>
+						<td>633</td>
+						<td>509</td>
+						<td>258,947</td>
+						<td>198,749</td>
+						<td>292 </td>
+						<td>582</td>
+						<td>445</td>
+						<td>283,990</td>
+						<td>229,093</td>
+						<td>233 </td>
+						<td>422</td>
+						<td>338</td>
+						<td>193,914</td>
+						<td>151,253</td>
+						<td>257 </td>
+						<td>510</td>
+						<td>352</td>
+						<td>304,196</td>
+						<td>253,126</td>
+						<td>266 </td>
+						<td>479</td>
+						<td>375</td>
+						<td>220,768</td>
+						<td>176,393</td>
+						<td>293 </td>
+						<td>627</td>
+						<td>447</td>
+						<td>304,062</td>
+						<td>248,184</td>
+						<td>290 </td>
+						<td>500</td>
+						<td>409</td>
+						<td>194,506</td>
+						<td>147,168</td>
+						<td>292 </td>
+						<td>554</td>
+						<td>436</td>
+						<td>223,844</td>
+						<td>167,780</td>
+						<td>279 </td>
+						<td>577</td>
+						<td>405</td>
+						<td>261,054</td>
+						<td>204,560</td>
+						<td>298 </td>
+						<td>527</td>
+						<td>419</td>
+						<td>199,002</td>
+						<td>147,516</td>
+						<td>250 </td>
+						<td>445</td>
+						<td>356</td>
+						<td>188,624</td>
+						<td>141,014</td>
+						<td>307 </td>
+						<td>574</td>
+						<td>461</td>
+						<td>261,446</td>
+						<td>206,979</td>
+						<td>345 </td>
+						<td>632</td>
+						<td>482</td>
+						<td>267,109</td>
+						<td>203,881</td>
 						<td>311 </td>
 						<td>530</td>
 						<td>438</td>
@@ -906,6 +1944,126 @@
 					</tr>
 					<tr>
 						<th scope="row">40_49세</th>
+						<td>792 </td>
+						<td>1,705</td>
+						<td>1,216</td>
+						<td>844,138</td>
+						<td>682,468</td>
+						<td>734 </td>
+						<td>1,353</td>
+						<td>1,026</td>
+						<td>645,695</td>
+						<td>520,581</td>
+						<td>823 </td>
+						<td>1,549</td>
+						<td>1,156</td>
+						<td>853,601</td>
+						<td>706,317</td>
+						<td>851 </td>
+						<td>1,595</td>
+						<td>1,252</td>
+						<td>778,684</td>
+						<td>634,810</td>
+						<td>804 </td>
+						<td>1,463</td>
+						<td>1,136</td>
+						<td>684,451</td>
+						<td>547,229</td>
+						<td>961 </td>
+						<td>1,898</td>
+						<td>1,389</td>
+						<td>1,072,492</td>
+						<td>888,382</td>
+						<td>969 </td>
+						<td>1,950</td>
+						<td>1,409</td>
+						<td>1,003,517</td>
+						<td>819,199</td>
+						<td>947 </td>
+						<td>1,872</td>
+						<td>1,361</td>
+						<td>1,018,463</td>
+						<td>825,140</td>
+						<td>945 </td>
+						<td>1,777</td>
+						<td>1,338</td>
+						<td>851,643</td>
+						<td>681,949</td>
+						<td>934 </td>
+						<td>1,778</td>
+						<td>1,301</td>
+						<td>973,200</td>
+						<td>801,792</td>
+						<td>1,046 </td>
+						<td>2,096</td>
+						<td>1,483</td>
+						<td>1,156,826</td>
+						<td>946,024</td>
+						<td>1,082 </td>
+						<td>1,883</td>
+						<td>1,556</td>
+						<td>827,637</td>
+						<td>650,356</td>
+						<td>880 </td>
+						<td>1,750</td>
+						<td>1,231</td>
+						<td>843,480</td>
+						<td>672,877</td>
+						<td>763 </td>
+						<td>1,476</td>
+						<td>1,073</td>
+						<td>783,867</td>
+						<td>635,993</td>
+						<td>886 </td>
+						<td>1,618</td>
+						<td>1,264</td>
+						<td>841,791</td>
+						<td>680,609</td>
+						<td>863 </td>
+						<td>1,600</td>
+						<td>1,206</td>
+						<td>880,230</td>
+						<td>721,600</td>
+						<td>962 </td>
+						<td>1,833</td>
+						<td>1,406</td>
+						<td>981,912</td>
+						<td>788,751</td>
+						<td>987 </td>
+						<td>1,818</td>
+						<td>1,390</td>
+						<td>864,660</td>
+						<td>686,344</td>
+						<td>988 </td>
+						<td>1,878</td>
+						<td>1,389</td>
+						<td>1,029,899</td>
+						<td>842,729</td>
+						<td>991 </td>
+						<td>1,803</td>
+						<td>1,368</td>
+						<td>963,094</td>
+						<td>774,469</td>
+						<td>994 </td>
+						<td>1,839</td>
+						<td>1,424</td>
+						<td>928,436</td>
+						<td>751,323</td>
+						<td>1,009 </td>
+						<td>1,807</td>
+						<td>1,360</td>
+						<td>1,090,605</td>
+						<td>890,569</td>
+						<td>1,152 </td>
+						<td>2,161</td>
+						<td>1,653</td>
+						<td>1,051,459</td>
+						<td>841,144</td>
+						<td>1,141 </td>
+						<td>2,007</td>
+						<td>1,626</td>
+						<td>987,277</td>
+						<td>786,196</td>
 						<td>1,006 </td>
 						<td>1,963</td>
 						<td>1,414</td>
@@ -969,6 +2127,126 @@
 					</tr>
 					<tr>
 						<th scope="row">50_59세</th>
+						<td>1,818 </td>
+						<td>3,860</td>
+						<td>2,597</td>
+						<td>2,241,774</td>
+						<td>1,877,361</td>
+						<td>1,654 </td>
+						<td>3,266</td>
+						<td>2,293</td>
+						<td>1,640,971</td>
+						<td>1,357,120</td>
+						<td>1,897 </td>
+						<td>3,849</td>
+						<td>2,695</td>
+						<td>2,116,369</td>
+						<td>1,764,011</td>
+						<td>1,925 </td>
+						<td>3,608</td>
+						<td>2,660</td>
+						<td>1,629,710</td>
+						<td>1,315,883</td>
+						<td>1,855 </td>
+						<td>3,456</td>
+						<td>2,544</td>
+						<td>1,756,875</td>
+						<td>1,442,653</td>
+						<td>1,949 </td>
+						<td>3,848</td>
+						<td>2,735</td>
+						<td>1,821,259</td>
+						<td>1,474,155</td>
+						<td>1,976 </td>
+						<td>3,700</td>
+						<td>2,718</td>
+						<td>1,766,697</td>
+						<td>1,426,635</td>
+						<td>1,892 </td>
+						<td>3,497</td>
+						<td>2,610</td>
+						<td>1,666,497</td>
+						<td>1,331,039</td>
+						<td>1,813 </td>
+						<td>3,336</td>
+						<td>2,461</td>
+						<td>1,676,872</td>
+						<td>1,355,251</td>
+						<td>1,924 </td>
+						<td>3,507</td>
+						<td>2,619</td>
+						<td>1,805,526</td>
+						<td>1,471,002</td>
+						<td>2,133 </td>
+						<td>3,937</td>
+						<td>2,913</td>
+						<td>1,898,416</td>
+						<td>1,527,309</td>
+						<td>2,127 </td>
+						<td>3,728</td>
+						<td>2,937</td>
+						<td>1,595,668</td>
+						<td>1,255,165</td>
+						<td>1,909 </td>
+						<td>3,719</td>
+						<td>2,681</td>
+						<td>1,838,521</td>
+						<td>1,485,208</td>
+						<td>1,691 </td>
+						<td>3,105</td>
+						<td>2,316</td>
+						<td>1,536,200</td>
+						<td>1,247,703</td>
+						<td>1,881 </td>
+						<td>3,317</td>
+						<td>2,633</td>
+						<td>1,586,918</td>
+						<td>1,276,283</td>
+						<td>1,849 </td>
+						<td>3,403</td>
+						<td>2,524</td>
+						<td>1,690,482</td>
+						<td>1,353,523</td>
+						<td>1,971 </td>
+						<td>3,738</td>
+						<td>2,742</td>
+						<td>1,872,957</td>
+						<td>1,527,245</td>
+						<td>2,061 </td>
+						<td>4,028</td>
+						<td>2,858</td>
+						<td>2,096,450</td>
+						<td>1,709,994</td>
+						<td>2,103 </td>
+						<td>3,918</td>
+						<td>2,907</td>
+						<td>2,098,826</td>
+						<td>1,725,773</td>
+						<td>2,183 </td>
+						<td>4,203</td>
+						<td>3,089</td>
+						<td>2,134,112</td>
+						<td>1,745,913</td>
+						<td>2,017 </td>
+						<td>3,418</td>
+						<td>2,710</td>
+						<td>1,478,345</td>
+						<td>1,171,907</td>
+						<td>1,968 </td>
+						<td>3,531</td>
+						<td>2,684</td>
+						<td>1,756,422</td>
+						<td>1,417,700</td>
+						<td>2,190 </td>
+						<td>3,918</td>
+						<td>2,994</td>
+						<td>1,863,264</td>
+						<td>1,504,065</td>
+						<td>2,228 </td>
+						<td>3,786</td>
+						<td>3,052</td>
+						<td>1,815,045</td>
+						<td>1,451,239</td>
 						<td>2,076 </td>
 						<td>3,812</td>
 						<td>2,811</td>
@@ -1032,6 +2310,126 @@
 					</tr>
 					<tr>
 						<th scope="row">60_69세</th>
+						<td>2,220 </td>
+						<td>4,567</td>
+						<td>3,040</td>
+						<td>2,180,649</td>
+						<td>1,798,094</td>
+						<td>2,262 </td>
+						<td>4,235</td>
+						<td>3,028</td>
+						<td>1,670,857</td>
+						<td>1,336,597</td>
+						<td>2,660 </td>
+						<td>5,024</td>
+						<td>3,688</td>
+						<td>2,465,341</td>
+						<td>2,029,097</td>
+						<td>2,679 </td>
+						<td>5,008</td>
+						<td>3,623</td>
+						<td>2,162,500</td>
+						<td>1,750,466</td>
+						<td>2,516 </td>
+						<td>5,174</td>
+						<td>3,408</td>
+						<td>2,185,668</td>
+						<td>1,773,419</td>
+						<td>2,716 </td>
+						<td>5,174</td>
+						<td>3,691</td>
+						<td>2,198,577</td>
+						<td>1,766,296</td>
+						<td>2,672 </td>
+						<td>4,966</td>
+						<td>3,600</td>
+						<td>2,265,922</td>
+						<td>1,820,402</td>
+						<td>2,640 </td>
+						<td>4,875</td>
+						<td>3,590</td>
+						<td>2,200,830</td>
+						<td>1,779,088</td>
+						<td>2,487 </td>
+						<td>4,503</td>
+						<td>3,284</td>
+						<td>2,006,463</td>
+						<td>1,619,073</td>
+						<td>2,531 </td>
+						<td>4,560</td>
+						<td>3,300</td>
+						<td>2,005,542</td>
+						<td>1,612,359</td>
+						<td>2,873 </td>
+						<td>5,208</td>
+						<td>3,856</td>
+						<td>2,342,058</td>
+						<td>1,889,615</td>
+						<td>2,849 </td>
+						<td>5,028</td>
+						<td>3,849</td>
+						<td>2,451,608</td>
+						<td>1,994,675</td>
+						<td>2,730 </td>
+						<td>5,292</td>
+						<td>3,622</td>
+						<td>2,411,129</td>
+						<td>1,938,298</td>
+						<td>2,483 </td>
+						<td>4,472</td>
+						<td>3,249</td>
+						<td>2,064,655</td>
+						<td>1,672,151</td>
+						<td>2,800 </td>
+						<td>5,099</td>
+						<td>3,751</td>
+						<td>2,328,092</td>
+						<td>1,889,611</td>
+						<td>2,744 </td>
+						<td>4,941</td>
+						<td>3,677</td>
+						<td>2,343,776</td>
+						<td>1,880,157</td>
+						<td>2,962 </td>
+						<td>5,453</td>
+						<td>4,084</td>
+						<td>2,616,597</td>
+						<td>2,117,360</td>
+						<td>3,000 </td>
+						<td>5,368</td>
+						<td>4,037</td>
+						<td>2,444,474</td>
+						<td>1,949,888</td>
+						<td>3,053 </td>
+						<td>5,477</td>
+						<td>4,130</td>
+						<td>2,567,969</td>
+						<td>2,065,785</td>
+						<td>3,109 </td>
+						<td>5,664</td>
+						<td>4,294</td>
+						<td>2,748,502</td>
+						<td>2,226,443</td>
+						<td>2,983 </td>
+						<td>5,078</td>
+						<td>3,959</td>
+						<td>2,183,693</td>
+						<td>1,736,389</td>
+						<td>2,788 </td>
+						<td>4,874</td>
+						<td>3,657</td>
+						<td>2,340,452</td>
+						<td>1,900,441</td>
+						<td>3,124 </td>
+						<td>5,372</td>
+						<td>4,205</td>
+						<td>2,352,713</td>
+						<td>1,859,936</td>
+						<td>3,221 </td>
+						<td>5,680</td>
+						<td>4,361</td>
+						<td>2,683,796</td>
+						<td>2,151,856</td>
 						<td>2,977 </td>
 						<td>5,397</td>
 						<td>3,930</td>
@@ -1095,6 +2493,126 @@
 					</tr>
 					<tr>
 						<th scope="row">70_79세</th>
+						<td>1,441 </td>
+						<td>2,618</td>
+						<td>1,901</td>
+						<td>1,079,996</td>
+						<td>882,800</td>
+						<td>1,427 </td>
+						<td>2,377</td>
+						<td>1,866</td>
+						<td>862,517</td>
+						<td>673,644</td>
+						<td>1,661 </td>
+						<td>3,096</td>
+						<td>2,213</td>
+						<td>1,328,123</td>
+						<td>1,089,713</td>
+						<td>1,664 </td>
+						<td>2,823</td>
+						<td>2,173</td>
+						<td>1,045,485</td>
+						<td>829,295</td>
+						<td>1,589 </td>
+						<td>2,839</td>
+						<td>2,093</td>
+						<td>1,062,942</td>
+						<td>838,483</td>
+						<td>1,731 </td>
+						<td>3,161</td>
+						<td>2,329</td>
+						<td>1,322,660</td>
+						<td>1,080,123</td>
+						<td>1,733 </td>
+						<td>3,199</td>
+						<td>2,341</td>
+						<td>1,309,111</td>
+						<td>1,063,143</td>
+						<td>1,684 </td>
+						<td>3,027</td>
+						<td>2,277</td>
+						<td>1,149,903</td>
+						<td>923,753</td>
+						<td>1,586 </td>
+						<td>2,774</td>
+						<td>2,048</td>
+						<td>1,076,344</td>
+						<td>860,791</td>
+						<td>1,596 </td>
+						<td>2,847</td>
+						<td>2,074</td>
+						<td>1,154,844</td>
+						<td>926,843</td>
+						<td>1,707 </td>
+						<td>2,973</td>
+						<td>2,231</td>
+						<td>1,058,973</td>
+						<td>844,657</td>
+						<td>1,743 </td>
+						<td>3,114</td>
+						<td>2,352</td>
+						<td>1,195,533</td>
+						<td>950,754</td>
+						<td>1,614 </td>
+						<td>3,012</td>
+						<td>2,103</td>
+						<td>1,275,120</td>
+						<td>1,049,225</td>
+						<td>1,481 </td>
+						<td>2,514</td>
+						<td>1,879</td>
+						<td>834,320</td>
+						<td>658,102</td>
+						<td>1,739 </td>
+						<td>2,909</td>
+						<td>2,290</td>
+						<td>1,067,411</td>
+						<td>832,066</td>
+						<td>1,666 </td>
+						<td>2,813</td>
+						<td>2,235</td>
+						<td>1,002,673</td>
+						<td>776,585</td>
+						<td>1,885 </td>
+						<td>3,343</td>
+						<td>2,501</td>
+						<td>1,387,767</td>
+						<td>1,117,069</td>
+						<td>1,884 </td>
+						<td>3,334</td>
+						<td>2,525</td>
+						<td>1,388,314</td>
+						<td>1,097,435</td>
+						<td>1,832 </td>
+						<td>3,315</td>
+						<td>2,395</td>
+						<td>1,302,586</td>
+						<td>1,030,823</td>
+						<td>1,904 </td>
+						<td>3,208</td>
+						<td>2,476</td>
+						<td>1,255,178</td>
+						<td>990,658</td>
+						<td>1,856 </td>
+						<td>3,210</td>
+						<td>2,445</td>
+						<td>1,257,732</td>
+						<td>988,331</td>
+						<td>1,835 </td>
+						<td>3,365</td>
+						<td>2,325</td>
+						<td>1,435,759</td>
+						<td>1,156,320</td>
+						<td>1,968 </td>
+						<td>3,390</td>
+						<td>2,565</td>
+						<td>1,410,135</td>
+						<td>1,115,784</td>
+						<td>1,989 </td>
+						<td>3,229</td>
+						<td>2,560</td>
+						<td>1,229,477</td>
+						<td>943,806</td>
 						<td>1,789 </td>
 						<td>3,336</td>
 						<td>2,314</td>
@@ -1158,6 +2676,126 @@
 					</tr>
 					<tr>
 						<th scope="row">80세이상</th>
+						<td>310 </td>
+						<td>516</td>
+						<td>376</td>
+						<td>131,403</td>
+						<td>101,267</td>
+						<td>288 </td>
+						<td>558</td>
+						<td>345</td>
+						<td>190,342</td>
+						<td>156,897</td>
+						<td>400 </td>
+						<td>649</td>
+						<td>494</td>
+						<td>180,652</td>
+						<td>137,278</td>
+						<td>387 </td>
+						<td>684</td>
+						<td>481</td>
+						<td>285,530</td>
+						<td>231,700</td>
+						<td>355 </td>
+						<td>534</td>
+						<td>433</td>
+						<td>143,259</td>
+						<td>110,970</td>
+						<td>357 </td>
+						<td>566</td>
+						<td>440</td>
+						<td>148,271</td>
+						<td>115,412</td>
+						<td>371 </td>
+						<td>651</td>
+						<td>451</td>
+						<td>185,276</td>
+						<td>142,607</td>
+						<td>351 </td>
+						<td>593</td>
+						<td>427</td>
+						<td>222,183</td>
+						<td>183,276</td>
+						<td>396 </td>
+						<td>650</td>
+						<td>483</td>
+						<td>154,136</td>
+						<td>111,801</td>
+						<td>383 </td>
+						<td>537</td>
+						<td>454</td>
+						<td>175,957</td>
+						<td>140,005</td>
+						<td>434 </td>
+						<td>707</td>
+						<td>550</td>
+						<td>254,121</td>
+						<td>205,648</td>
+						<td>423 </td>
+						<td>741</td>
+						<td>540</td>
+						<td>289,685</td>
+						<td>226,866</td>
+						<td>391 </td>
+						<td>554</td>
+						<td>473</td>
+						<td>109,393</td>
+						<td>77,512</td>
+						<td>372 </td>
+						<td>641</td>
+						<td>464</td>
+						<td>197,193</td>
+						<td>153,056</td>
+						<td>396 </td>
+						<td>678</td>
+						<td>493</td>
+						<td>157,804</td>
+						<td>112,765</td>
+						<td>428 </td>
+						<td>705</td>
+						<td>521</td>
+						<td>182,548</td>
+						<td>137,657</td>
+						<td>474 </td>
+						<td>842</td>
+						<td>570</td>
+						<td>264,265</td>
+						<td>207,571</td>
+						<td>452 </td>
+						<td>754</td>
+						<td>570</td>
+						<td>171,332</td>
+						<td>119,522</td>
+						<td>437 </td>
+						<td>802</td>
+						<td>544</td>
+						<td>249,701</td>
+						<td>195,414</td>
+						<td>487 </td>
+						<td>831</td>
+						<td>588</td>
+						<td>195,368</td>
+						<td>144,607</td>
+						<td>476 </td>
+						<td>885</td>
+						<td>584</td>
+						<td>233,280</td>
+						<td>178,369</td>
+						<td>467 </td>
+						<td>833</td>
+						<td>577</td>
+						<td>179,361</td>
+						<td>125,154</td>
+						<td>524 </td>
+						<td>906</td>
+						<td>645</td>
+						<td>221,010</td>
+						<td>164,741</td>
+						<td>517 </td>
+						<td>859</td>
+						<td>648</td>
+						<td>271,962</td>
+						<td>205,290</td>
 						<td>436 </td>
 						<td>705</td>
 						<td>507</td>
@@ -1222,6 +2860,126 @@
 					<tr>
 						<th scope="row" rowspan="10">여</th>
 						<th scope="row">소계</th>
+						<td>15,983 </td>
+						<td>33,892</td>
+						<td>22,215</td>
+						<td>15,459,264</td>
+						<td>12,705,555</td>
+						<td>15,708 </td>
+						<td>30,608</td>
+						<td>21,127</td>
+						<td>13,466,162</td>
+						<td>10,957,439</td>
+						<td>18,952 </td>
+						<td>38,155</td>
+						<td>26,559</td>
+						<td>17,895,623</td>
+						<td>14,704,048</td>
+						<td>18,819 </td>
+						<td>36,937</td>
+						<td>26,324</td>
+						<td>16,223,531</td>
+						<td>13,130,919</td>
+						<td>18,384 </td>
+						<td>35,543</td>
+						<td>25,096</td>
+						<td>15,564,156</td>
+						<td>12,587,429</td>
+						<td>19,708 </td>
+						<td>37,713</td>
+						<td>27,121</td>
+						<td>16,323,421</td>
+						<td>13,157,069</td>
+						<td>19,383 </td>
+						<td>37,644</td>
+						<td>26,866</td>
+						<td>16,568,991</td>
+						<td>13,321,321</td>
+						<td>18,837 </td>
+						<td>37,165</td>
+						<td>25,875</td>
+						<td>17,080,051</td>
+						<td>13,837,276</td>
+						<td>17,905 </td>
+						<td>32,914</td>
+						<td>23,919</td>
+						<td>14,176,705</td>
+						<td>11,415,428</td>
+						<td>18,641 </td>
+						<td>35,363</td>
+						<td>24,891</td>
+						<td>15,993,813</td>
+						<td>12,910,995</td>
+						<td>20,618 </td>
+						<td>38,587</td>
+						<td>28,155</td>
+						<td>16,977,274</td>
+						<td>13,617,490</td>
+						<td>20,261 </td>
+						<td>37,439</td>
+						<td>27,898</td>
+						<td>16,549,756</td>
+						<td>13,301,490</td>
+						<td>18,712 </td>
+						<td>36,024</td>
+						<td>25,357</td>
+						<td>15,884,221</td>
+						<td>12,842,905</td>
+						<td>17,290 </td>
+						<td>32,038</td>
+						<td>22,927</td>
+						<td>13,732,095</td>
+						<td>11,014,315</td>
+						<td>19,409 </td>
+						<td>36,168</td>
+						<td>26,487</td>
+						<td>15,630,901</td>
+						<td>12,558,830</td>
+						<td>19,357 </td>
+						<td>35,518</td>
+						<td>26,316</td>
+						<td>15,357,686</td>
+						<td>12,196,479</td>
+						<td>21,789 </td>
+						<td>41,913</td>
+						<td>30,260</td>
+						<td>19,532,722</td>
+						<td>15,689,466</td>
+						<td>21,430 </td>
+						<td>40,830</td>
+						<td>29,444</td>
+						<td>18,929,969</td>
+						<td>15,219,527</td>
+						<td>21,251 </td>
+						<td>39,423</td>
+						<td>29,043</td>
+						<td>17,845,849</td>
+						<td>14,278,885</td>
+						<td>21,755 </td>
+						<td>40,602</td>
+						<td>29,971</td>
+						<td>18,062,017</td>
+						<td>14,402,066</td>
+						<td>21,015 </td>
+						<td>37,104</td>
+						<td>28,094</td>
+						<td>16,246,861</td>
+						<td>12,973,544</td>
+						<td>20,458 </td>
+						<td>37,164</td>
+						<td>27,686</td>
+						<td>17,349,899</td>
+						<td>13,919,697</td>
+						<td>22,627 </td>
+						<td>41,321</td>
+						<td>31,020</td>
+						<td>18,726,417</td>
+						<td>14,960,279</td>
+						<td>22,340 </td>
+						<td>39,856</td>
+						<td>30,356</td>
+						<td>18,187,128</td>
+						<td>14,534,719</td>
 						<td>20,786 </td>
 						<td>38,281</td>
 						<td>27,888</td>
@@ -1285,6 +3043,126 @@
 					</tr>
 					<tr>
 						<th scope="row">0_9세</th>
+						<td>3 </td>
+						<td>20</td>
+						<td>9</td>
+						<td>18,045</td>
+						<td>16,110</td>
+						<td>3 </td>
+						<td>3</td>
+						<td>3</td>
+						<td>75</td>
+						<td>10</td>
+						<td>2 </td>
+						<td>3</td>
+						<td>3</td>
+						<td>97</td>
+						<td>36</td>
+						<td>1 </td>
+						<td>3</td>
+						<td>3</td>
+						<td>698</td>
+						<td>265</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>3 </td>
+						<td>4</td>
+						<td>3</td>
+						<td>2,019</td>
+						<td>1,561</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>747</td>
+						<td>299</td>
+						<td>2 </td>
+						<td>8</td>
+						<td>2</td>
+						<td>13,146</td>
+						<td>12,342</td>
+						<td>1 </td>
+						<td>4</td>
+						<td>2</td>
+						<td>2,242</td>
+						<td>2,073</td>
+						<td>2 </td>
+						<td>10</td>
+						<td>3</td>
+						<td>12,336</td>
+						<td>11,524</td>
+						<td>2 </td>
+						<td>4</td>
+						<td>5</td>
+						<td>253</td>
+						<td>82</td>
+						<td>1 </td>
+						<td>2</td>
+						<td>1</td>
+						<td>1,066</td>
+						<td>953</td>
+						<td>1 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>37</td>
+						<td>22</td>
+						<td>3 </td>
+						<td>5</td>
+						<td>5</td>
+						<td>578</td>
+						<td>271</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>- </td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>2 </td>
+						<td>4</td>
+						<td>4</td>
+						<td>1,715</td>
+						<td>856</td>
+						<td>2 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>55</td>
+						<td>14</td>
+						<td>2 </td>
+						<td>2</td>
+						<td>2</td>
+						<td>85</td>
+						<td>18</td>
+						<td>3 </td>
+						<td>6</td>
+						<td>4</td>
+						<td>3,665</td>
+						<td>2,570</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>25</td>
+						<td>4</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>174</td>
+						<td>69</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>25</td>
+						<td>4</td>
+						<td>1 </td>
+						<td>1</td>
+						<td>1</td>
+						<td>233</td>
+						<td>85</td>
 						<td>2 </td>
 						<td>3</td>
 						<td>3</td>
@@ -1348,6 +3226,126 @@
 					</tr>
 					<tr>
 						<th scope="row">10_19세</th>
+						<td>13 </td>
+						<td>22</td>
+						<td>18</td>
+						<td>7,317</td>
+						<td>5,780</td>
+						<td>10 </td>
+						<td>19</td>
+						<td>17</td>
+						<td>5,639</td>
+						<td>3,347</td>
+						<td>9 </td>
+						<td>13</td>
+						<td>10</td>
+						<td>17,974</td>
+						<td>16,559</td>
+						<td>8 </td>
+						<td>17</td>
+						<td>14</td>
+						<td>3,498</td>
+						<td>2,413</td>
+						<td>9 </td>
+						<td>17</td>
+						<td>13</td>
+						<td>5,145</td>
+						<td>3,943</td>
+						<td>12 </td>
+						<td>15</td>
+						<td>13</td>
+						<td>3,730</td>
+						<td>2,266</td>
+						<td>13 </td>
+						<td>17</td>
+						<td>19</td>
+						<td>7,589</td>
+						<td>6,233</td>
+						<td>20 </td>
+						<td>47</td>
+						<td>33</td>
+						<td>32,079</td>
+						<td>27,572</td>
+						<td>10 </td>
+						<td>23</td>
+						<td>14</td>
+						<td>8,343</td>
+						<td>6,147</td>
+						<td>10 </td>
+						<td>17</td>
+						<td>17</td>
+						<td>3,700</td>
+						<td>1,957</td>
+						<td>13 </td>
+						<td>79</td>
+						<td>19</td>
+						<td>26,131</td>
+						<td>20,908</td>
+						<td>16 </td>
+						<td>29</td>
+						<td>24</td>
+						<td>7,070</td>
+						<td>3,561</td>
+						<td>14 </td>
+						<td>20</td>
+						<td>19</td>
+						<td>4,660</td>
+						<td>2,477</td>
+						<td>8 </td>
+						<td>12</td>
+						<td>12</td>
+						<td>1,670</td>
+						<td>643</td>
+						<td>9 </td>
+						<td>12</td>
+						<td>12</td>
+						<td>902</td>
+						<td>352</td>
+						<td>13 </td>
+						<td>16</td>
+						<td>15</td>
+						<td>3,511</td>
+						<td>1,571</td>
+						<td>14 </td>
+						<td>18</td>
+						<td>18</td>
+						<td>4,508</td>
+						<td>2,339</td>
+						<td>19 </td>
+						<td>130</td>
+						<td>24</td>
+						<td>35,717</td>
+						<td>26,308</td>
+						<td>16 </td>
+						<td>28</td>
+						<td>24</td>
+						<td>18,707</td>
+						<td>16,197</td>
+						<td>17 </td>
+						<td>28</td>
+						<td>25</td>
+						<td>7,292</td>
+						<td>4,376</td>
+						<td>19 </td>
+						<td>31</td>
+						<td>28</td>
+						<td>16,686</td>
+						<td>13,957</td>
+						<td>11 </td>
+						<td>18</td>
+						<td>16</td>
+						<td>3,696</td>
+						<td>2,285</td>
+						<td>12 </td>
+						<td>14</td>
+						<td>13</td>
+						<td>5,050</td>
+						<td>2,863</td>
+						<td>15 </td>
+						<td>18</td>
+						<td>18</td>
+						<td>3,271</td>
+						<td>1,513</td>
 						<td>24 </td>
 						<td>52</td>
 						<td>30</td>
@@ -1411,6 +3409,126 @@
 					</tr>
 					<tr>
 						<th scope="row">20_29세</th>
+						<td>79 </td>
+						<td>178</td>
+						<td>156</td>
+						<td>97,577</td>
+						<td>79,579</td>
+						<td>78 </td>
+						<td>140</td>
+						<td>128</td>
+						<td>48,402</td>
+						<td>35,059</td>
+						<td>81 </td>
+						<td>171</td>
+						<td>149</td>
+						<td>53,435</td>
+						<td>36,268</td>
+						<td>81 </td>
+						<td>163</td>
+						<td>142</td>
+						<td>53,687</td>
+						<td>40,148</td>
+						<td>92 </td>
+						<td>165</td>
+						<td>138</td>
+						<td>69,788</td>
+						<td>54,112</td>
+						<td>114 </td>
+						<td>185</td>
+						<td>165</td>
+						<td>66,828</td>
+						<td>48,126</td>
+						<td>112 </td>
+						<td>214</td>
+						<td>184</td>
+						<td>83,035</td>
+						<td>61,978</td>
+						<td>115 </td>
+						<td>225</td>
+						<td>196</td>
+						<td>93,262</td>
+						<td>71,005</td>
+						<td>115 </td>
+						<td>238</td>
+						<td>195</td>
+						<td>102,753</td>
+						<td>78,729</td>
+						<td>106 </td>
+						<td>208</td>
+						<td>181</td>
+						<td>56,956</td>
+						<td>38,222</td>
+						<td>111 </td>
+						<td>238</td>
+						<td>190</td>
+						<td>162,566</td>
+						<td>133,696</td>
+						<td>120 </td>
+						<td>176</td>
+						<td>160</td>
+						<td>67,606</td>
+						<td>51,394</td>
+						<td>107 </td>
+						<td>199</td>
+						<td>166</td>
+						<td>67,033</td>
+						<td>48,955</td>
+						<td>94 </td>
+						<td>186</td>
+						<td>158</td>
+						<td>69,462</td>
+						<td>51,660</td>
+						<td>82 </td>
+						<td>155</td>
+						<td>135</td>
+						<td>59,247</td>
+						<td>45,111</td>
+						<td>85 </td>
+						<td>147</td>
+						<td>124</td>
+						<td>48,784</td>
+						<td>33,860</td>
+						<td>90 </td>
+						<td>173</td>
+						<td>147</td>
+						<td>86,165</td>
+						<td>68,928</td>
+						<td>112 </td>
+						<td>220</td>
+						<td>183</td>
+						<td>99,783</td>
+						<td>73,450</td>
+						<td>102 </td>
+						<td>180</td>
+						<td>161</td>
+						<td>64,936</td>
+						<td>45,251</td>
+						<td>114 </td>
+						<td>269</td>
+						<td>208</td>
+						<td>126,113</td>
+						<td>99,913</td>
+						<td>110 </td>
+						<td>210</td>
+						<td>181</td>
+						<td>71,423</td>
+						<td>52,819</td>
+						<td>104 </td>
+						<td>216</td>
+						<td>173</td>
+						<td>127,711</td>
+						<td>105,082</td>
+						<td>126 </td>
+						<td>240</td>
+						<td>219</td>
+						<td>75,769</td>
+						<td>52,265</td>
+						<td>133 </td>
+						<td>251</td>
+						<td>229</td>
+						<td>125,740</td>
+						<td>101,479</td>
 						<td>118 </td>
 						<td>219</td>
 						<td>199</td>
@@ -1474,6 +3592,126 @@
 					</tr>
 					<tr>
 						<th scope="row">30_39세</th>
+						<td>323 </td>
+						<td>717</td>
+						<td>492</td>
+						<td>386,909</td>
+						<td>317,806</td>
+						<td>318 </td>
+						<td>545</td>
+						<td>442</td>
+						<td>256,633</td>
+						<td>204,468</td>
+						<td>323 </td>
+						<td>612</td>
+						<td>470</td>
+						<td>309,686</td>
+						<td>249,853</td>
+						<td>361 </td>
+						<td>645</td>
+						<td>544</td>
+						<td>346,229</td>
+						<td>280,583</td>
+						<td>369 </td>
+						<td>682</td>
+						<td>542</td>
+						<td>333,356</td>
+						<td>261,432</td>
+						<td>416 </td>
+						<td>720</td>
+						<td>599</td>
+						<td>300,741</td>
+						<td>234,461</td>
+						<td>424 </td>
+						<td>910</td>
+						<td>665</td>
+						<td>467,423</td>
+						<td>371,667</td>
+						<td>440 </td>
+						<td>909</td>
+						<td>668</td>
+						<td>567,330</td>
+						<td>465,324</td>
+						<td>388 </td>
+						<td>747</td>
+						<td>580</td>
+						<td>419,625</td>
+						<td>336,532</td>
+						<td>463 </td>
+						<td>829</td>
+						<td>687</td>
+						<td>375,788</td>
+						<td>291,579</td>
+						<td>478 </td>
+						<td>950</td>
+						<td>750</td>
+						<td>541,230</td>
+						<td>441,995</td>
+						<td>484 </td>
+						<td>882</td>
+						<td>730</td>
+						<td>523,853</td>
+						<td>428,781</td>
+						<td>450 </td>
+						<td>890</td>
+						<td>672</td>
+						<td>518,960</td>
+						<td>429,049</td>
+						<td>380 </td>
+						<td>661</td>
+						<td>532</td>
+						<td>375,006</td>
+						<td>301,222</td>
+						<td>357 </td>
+						<td>574</td>
+						<td>502</td>
+						<td>221,672</td>
+						<td>166,910</td>
+						<td>379 </td>
+						<td>671</td>
+						<td>535</td>
+						<td>391,656</td>
+						<td>311,668</td>
+						<td>442 </td>
+						<td>886</td>
+						<td>654</td>
+						<td>369,661</td>
+						<td>290,629</td>
+						<td>427 </td>
+						<td>789</td>
+						<td>607</td>
+						<td>353,087</td>
+						<td>273,739</td>
+						<td>426 </td>
+						<td>716</td>
+						<td>595</td>
+						<td>390,633</td>
+						<td>305,365</td>
+						<td>486 </td>
+						<td>817</td>
+						<td>700</td>
+						<td>350,171</td>
+						<td>263,079</td>
+						<td>456 </td>
+						<td>741</td>
+						<td>631</td>
+						<td>329,743</td>
+						<td>248,983</td>
+						<td>441 </td>
+						<td>772</td>
+						<td>644</td>
+						<td>471,854</td>
+						<td>384,170</td>
+						<td>495 </td>
+						<td>853</td>
+						<td>717</td>
+						<td>502,197</td>
+						<td>404,669</td>
+						<td>538 </td>
+						<td>938</td>
+						<td>766</td>
+						<td>517,717</td>
+						<td>412,874</td>
 						<td>458 </td>
 						<td>816</td>
 						<td>623</td>
@@ -1537,6 +3775,126 @@
 					</tr>
 					<tr>
 						<th scope="row">40_49세</th>
+						<td>1,327 </td>
+						<td>2,927</td>
+						<td>2,014</td>
+						<td>1,613,288</td>
+						<td>1,326,661</td>
+						<td>1,214 </td>
+						<td>2,429</td>
+						<td>1,695</td>
+						<td>1,302,882</td>
+						<td>1,069,291</td>
+						<td>1,324 </td>
+						<td>2,749</td>
+						<td>1,919</td>
+						<td>1,673,847</td>
+						<td>1,409,372</td>
+						<td>1,353 </td>
+						<td>2,609</td>
+						<td>1,964</td>
+						<td>1,297,242</td>
+						<td>1,043,841</td>
+						<td>1,287 </td>
+						<td>2,437</td>
+						<td>1,867</td>
+						<td>1,146,521</td>
+						<td>915,780</td>
+						<td>1,376 </td>
+						<td>2,587</td>
+						<td>2,047</td>
+						<td>1,239,900</td>
+						<td>990,240</td>
+						<td>1,454 </td>
+						<td>2,734</td>
+						<td>2,144</td>
+						<td>1,231,944</td>
+						<td>963,994</td>
+						<td>1,561 </td>
+						<td>3,091</td>
+						<td>2,324</td>
+						<td>1,543,855</td>
+						<td>1,226,014</td>
+						<td>1,468 </td>
+						<td>2,613</td>
+						<td>2,099</td>
+						<td>1,342,885</td>
+						<td>1,090,910</td>
+						<td>1,468 </td>
+						<td>2,691</td>
+						<td>2,070</td>
+						<td>1,430,541</td>
+						<td>1,156,069</td>
+						<td>1,750 </td>
+						<td>3,172</td>
+						<td>2,563</td>
+						<td>1,483,837</td>
+						<td>1,146,708</td>
+						<td>1,629 </td>
+						<td>3,080</td>
+						<td>2,376</td>
+						<td>1,632,179</td>
+						<td>1,317,708</td>
+						<td>1,476 </td>
+						<td>2,973</td>
+						<td>2,165</td>
+						<td>1,606,996</td>
+						<td>1,304,634</td>
+						<td>1,272 </td>
+						<td>2,378</td>
+						<td>1,735</td>
+						<td>1,278,905</td>
+						<td>1,032,600</td>
+						<td>1,371 </td>
+						<td>2,457</td>
+						<td>1,956</td>
+						<td>1,197,791</td>
+						<td>962,140</td>
+						<td>1,410 </td>
+						<td>2,616</td>
+						<td>2,052</td>
+						<td>1,396,351</td>
+						<td>1,119,808</td>
+						<td>1,574 </td>
+						<td>3,086</td>
+						<td>2,289</td>
+						<td>1,636,457</td>
+						<td>1,316,238</td>
+						<td>1,598 </td>
+						<td>3,063</td>
+						<td>2,318</td>
+						<td>1,622,899</td>
+						<td>1,305,956</td>
+						<td>1,635 </td>
+						<td>2,984</td>
+						<td>2,328</td>
+						<td>1,523,648</td>
+						<td>1,221,763</td>
+						<td>1,637 </td>
+						<td>3,087</td>
+						<td>2,401</td>
+						<td>1,495,764</td>
+						<td>1,170,710</td>
+						<td>1,553 </td>
+						<td>3,009</td>
+						<td>2,254</td>
+						<td>1,716,213</td>
+						<td>1,395,061</td>
+						<td>1,547 </td>
+						<td>2,686</td>
+						<td>2,176</td>
+						<td>1,367,477</td>
+						<td>1,086,132</td>
+						<td>1,778 </td>
+						<td>3,309</td>
+						<td>2,646</td>
+						<td>1,573,573</td>
+						<td>1,229,240</td>
+						<td>1,810 </td>
+						<td>3,301</td>
+						<td>2,621</td>
+						<td>1,711,571</td>
+						<td>1,374,875</td>
 						<td>1,612 </td>
 						<td>3,053</td>
 						<td>2,290</td>
@@ -1600,6 +3958,126 @@
 					</tr>
 					<tr>
 						<th scope="row">50_59세</th>
+						<td>3,596 </td>
+						<td>7,726</td>
+						<td>5,138</td>
+						<td>3,939,892</td>
+						<td>3,245,786</td>
+						<td>3,565 </td>
+						<td>6,803</td>
+						<td>4,916</td>
+						<td>3,369,753</td>
+						<td>2,751,165</td>
+						<td>4,165 </td>
+						<td>8,227</td>
+						<td>5,935</td>
+						<td>4,197,327</td>
+						<td>3,452,269</td>
+						<td>4,066 </td>
+						<td>7,753</td>
+						<td>5,860</td>
+						<td>3,639,851</td>
+						<td>2,932,416</td>
+						<td>4,004 </td>
+						<td>7,530</td>
+						<td>5,595</td>
+						<td>3,566,540</td>
+						<td>2,867,963</td>
+						<td>4,309 </td>
+						<td>8,345</td>
+						<td>6,150</td>
+						<td>4,023,696</td>
+						<td>3,244,711</td>
+						<td>4,214 </td>
+						<td>8,002</td>
+						<td>5,930</td>
+						<td>3,730,279</td>
+						<td>2,999,703</td>
+						<td>4,147 </td>
+						<td>8,166</td>
+						<td>5,976</td>
+						<td>3,963,424</td>
+						<td>3,173,511</td>
+						<td>3,820 </td>
+						<td>6,895</td>
+						<td>5,262</td>
+						<td>3,240,785</td>
+						<td>2,605,310</td>
+						<td>4,020 </td>
+						<td>7,477</td>
+						<td>5,550</td>
+						<td>3,568,940</td>
+						<td>2,853,278</td>
+						<td>4,415 </td>
+						<td>8,301</td>
+						<td>6,188</td>
+						<td>3,846,524</td>
+						<td>3,075,301</td>
+						<td>4,414 </td>
+						<td>8,035</td>
+						<td>6,238</td>
+						<td>3,811,220</td>
+						<td>3,046,233</td>
+						<td>4,003 </td>
+						<td>7,504</td>
+						<td>5,589</td>
+						<td>3,322,390</td>
+						<td>2,647,303</td>
+						<td>3,645 </td>
+						<td>6,730</td>
+						<td>4,989</td>
+						<td>3,371,785</td>
+						<td>2,742,076</td>
+						<td>4,101 </td>
+						<td>7,498</td>
+						<td>5,722</td>
+						<td>3,610,702</td>
+						<td>2,911,369</td>
+						<td>3,975 </td>
+						<td>7,199</td>
+						<td>5,535</td>
+						<td>3,486,306</td>
+						<td>2,793,559</td>
+						<td>4,676 </td>
+						<td>8,973</td>
+						<td>6,742</td>
+						<td>4,569,968</td>
+						<td>3,655,496</td>
+						<td>4,602 </td>
+						<td>9,153</td>
+						<td>6,670</td>
+						<td>4,782,850</td>
+						<td>3,877,670</td>
+						<td>4,691 </td>
+						<td>8,842</td>
+						<td>6,678</td>
+						<td>4,551,130</td>
+						<td>3,675,720</td>
+						<td>4,873 </td>
+						<td>9,370</td>
+						<td>6,997</td>
+						<td>4,526,623</td>
+						<td>3,629,484</td>
+						<td>4,566 </td>
+						<td>8,047</td>
+						<td>6,291</td>
+						<td>3,794,173</td>
+						<td>3,032,707</td>
+						<td>4,246 </td>
+						<td>7,757</td>
+						<td>5,925</td>
+						<td>4,200,840</td>
+						<td>3,409,609</td>
+						<td>4,815 </td>
+						<td>8,756</td>
+						<td>6,815</td>
+						<td>4,251,177</td>
+						<td>3,397,861</td>
+						<td>4,791 </td>
+						<td>8,628</td>
+						<td>6,768</td>
+						<td>4,390,756</td>
+						<td>3,522,087</td>
 						<td>4,311 </td>
 						<td>8,051</td>
 						<td>5,957</td>
@@ -1663,6 +4141,126 @@
 					</tr>
 					<tr>
 						<th scope="row">60_69세</th>
+						<td>5,604 </td>
+						<td>11,467</td>
+						<td>7,832</td>
+						<td>5,385,006</td>
+						<td>4,432,297</td>
+						<td>5,569 </td>
+						<td>10,789</td>
+						<td>7,515</td>
+						<td>5,014,531</td>
+						<td>4,096,576</td>
+						<td>6,914 </td>
+						<td>14,062</td>
+						<td>9,822</td>
+						<td>6,763,831</td>
+						<td>5,563,440</td>
+						<td>6,785 </td>
+						<td>13,440</td>
+						<td>9,593</td>
+						<td>6,231,951</td>
+						<td>5,063,185</td>
+						<td>6,703 </td>
+						<td>12,760</td>
+						<td>9,167</td>
+						<td>5,814,076</td>
+						<td>4,711,715</td>
+						<td>7,347 </td>
+						<td>13,762</td>
+						<td>10,164</td>
+						<td>6,208,975</td>
+						<td>5,011,738</td>
+						<td>7,070 </td>
+						<td>14,052</td>
+						<td>9,894</td>
+						<td>6,600,817</td>
+						<td>5,339,838</td>
+						<td>6,734 </td>
+						<td>13,204</td>
+						<td>9,206</td>
+						<td>6,375,282</td>
+						<td>5,208,072</td>
+						<td>6,324 </td>
+						<td>11,371</td>
+						<td>8,440</td>
+						<td>5,014,208</td>
+						<td>4,037,663</td>
+						<td>6,597 </td>
+						<td>12,532</td>
+						<td>8,773</td>
+						<td>5,914,014</td>
+						<td>4,782,474</td>
+						<td>7,422 </td>
+						<td>13,903</td>
+						<td>10,088</td>
+						<td>6,502,124</td>
+						<td>5,262,111</td>
+						<td>7,247 </td>
+						<td>13,258</td>
+						<td>10,060</td>
+						<td>6,035,367</td>
+						<td>4,845,454</td>
+						<td>6,910 </td>
+						<td>13,324</td>
+						<td>9,387</td>
+						<td>5,990,888</td>
+						<td>4,857,454</td>
+						<td>6,371 </td>
+						<td>11,748</td>
+						<td>8,479</td>
+						<td>5,009,346</td>
+						<td>3,985,525</td>
+						<td>7,125 </td>
+						<td>13,407</td>
+						<td>9,734</td>
+						<td>6,100,313</td>
+						<td>4,927,545</td>
+						<td>7,146 </td>
+						<td>12,712</td>
+						<td>9,660</td>
+						<td>5,610,623</td>
+						<td>4,451,952</td>
+						<td>7,949 </td>
+						<td>14,871</td>
+						<td>11,067</td>
+						<td>7,014,287</td>
+						<td>5,611,460</td>
+						<td>7,875 </td>
+						<td>14,621</td>
+						<td>10,802</td>
+						<td>6,727,999</td>
+						<td>5,359,627</td>
+						<td>7,673 </td>
+						<td>14,122</td>
+						<td>10,540</td>
+						<td>6,096,531</td>
+						<td>4,829,902</td>
+						<td>7,771 </td>
+						<td>14,353</td>
+						<td>10,725</td>
+						<td>6,680,140</td>
+						<td>5,346,259</td>
+						<td>7,498 </td>
+						<td>13,170</td>
+						<td>9,988</td>
+						<td>5,945,911</td>
+						<td>4,761,056</td>
+						<td>7,380 </td>
+						<td>13,511</td>
+						<td>10,073</td>
+						<td>6,265,030</td>
+						<td>4,991,372</td>
+						<td>8,006 </td>
+						<td>14,855</td>
+						<td>10,974</td>
+						<td>7,102,000</td>
+						<td>5,723,654</td>
+						<td>7,979 </td>
+						<td>14,173</td>
+						<td>10,841</td>
+						<td>6,563,368</td>
+						<td>5,241,939</td>
 						<td>7,524 </td>
 						<td>13,733</td>
 						<td>10,126</td>
@@ -1726,6 +4324,126 @@
 					</tr>
 					<tr>
 						<th scope="row">70_79세</th>
+						<td>3,866 </td>
+						<td>7,763</td>
+						<td>5,114</td>
+						<td>3,304,122</td>
+						<td>2,723,740</td>
+						<td>3,811 </td>
+						<td>7,139</td>
+						<td>5,008</td>
+						<td>2,805,498</td>
+						<td>2,278,722</td>
+						<td>4,667 </td>
+						<td>9,089</td>
+						<td>6,372</td>
+						<td>3,890,127</td>
+						<td>3,171,475</td>
+						<td>4,730 </td>
+						<td>8,989</td>
+						<td>6,427</td>
+						<td>3,647,795</td>
+						<td>2,953,817</td>
+						<td>4,529 </td>
+						<td>8,871</td>
+						<td>6,078</td>
+						<td>3,812,529</td>
+						<td>3,124,188</td>
+						<td>4,616 </td>
+						<td>8,895</td>
+						<td>6,156</td>
+						<td>3,653,946</td>
+						<td>2,980,878</td>
+						<td>4,680 </td>
+						<td>8,664</td>
+						<td>6,249</td>
+						<td>3,561,307</td>
+						<td>2,870,961</td>
+						<td>4,346 </td>
+						<td>8,243</td>
+						<td>5,670</td>
+						<td>3,524,255</td>
+						<td>2,877,463</td>
+						<td>4,299 </td>
+						<td>7,760</td>
+						<td>5,537</td>
+						<td>3,199,684</td>
+						<td>2,596,404</td>
+						<td>4,484 </td>
+						<td>8,158</td>
+						<td>5,799</td>
+						<td>3,637,433</td>
+						<td>2,979,162</td>
+						<td>4,859 </td>
+						<td>8,519</td>
+						<td>6,428</td>
+						<td>3,567,762</td>
+						<td>2,875,957</td>
+						<td>4,784 </td>
+						<td>8,624</td>
+						<td>6,417</td>
+						<td>3,727,171</td>
+						<td>3,036,196</td>
+						<td>4,286 </td>
+						<td>7,809</td>
+						<td>5,553</td>
+						<td>3,532,314</td>
+						<td>2,885,447</td>
+						<td>4,123 </td>
+						<td>7,311</td>
+						<td>5,346</td>
+						<td>2,822,877</td>
+						<td>2,260,115</td>
+						<td>4,759 </td>
+						<td>8,627</td>
+						<td>6,399</td>
+						<td>3,539,043</td>
+						<td>2,831,278</td>
+						<td>4,722 </td>
+						<td>8,746</td>
+						<td>6,375</td>
+						<td>3,523,480</td>
+						<td>2,795,735</td>
+						<td>5,220 </td>
+						<td>10,069</td>
+						<td>7,073</td>
+						<td>4,524,286</td>
+						<td>3,662,391</td>
+						<td>5,081 </td>
+						<td>9,293</td>
+						<td>6,757</td>
+						<td>4,141,811</td>
+						<td>3,356,584</td>
+						<td>5,002 </td>
+						<td>9,080</td>
+						<td>6,645</td>
+						<td>4,139,996</td>
+						<td>3,347,126</td>
+						<td>5,107 </td>
+						<td>9,026</td>
+						<td>6,750</td>
+						<td>3,835,901</td>
+						<td>3,067,425</td>
+						<td>5,018 </td>
+						<td>8,423</td>
+						<td>6,512</td>
+						<td>3,465,835</td>
+						<td>2,772,082</td>
+						<td>4,988 </td>
+						<td>8,654</td>
+						<td>6,541</td>
+						<td>3,803,198</td>
+						<td>3,053,578</td>
+						<td>5,461 </td>
+						<td>9,379</td>
+						<td>7,200</td>
+						<td>4,013,423</td>
+						<td>3,193,948</td>
+						<td>5,224 </td>
+						<td>9,056</td>
+						<td>6,891</td>
+						<td>3,948,877</td>
+						<td>3,171,187</td>
 						<td>4,993 </td>
 						<td>8,681</td>
 						<td>6,498</td>
@@ -1789,6 +4507,126 @@
 					</tr>
 					<tr>
 						<th scope="row">80세이상</th>
+						<td>1,187 </td>
+						<td>3,072</td>
+						<td>1,442</td>
+						<td>707,106</td>
+						<td>557,799</td>
+						<td>1,150 </td>
+						<td>2,741</td>
+						<td>1,403</td>
+						<td>662,749</td>
+						<td>518,800</td>
+						<td>1,483 </td>
+						<td>3,229</td>
+						<td>1,879</td>
+						<td>989,299</td>
+						<td>804,778</td>
+						<td>1,443 </td>
+						<td>3,318</td>
+						<td>1,777</td>
+						<td>1,002,579</td>
+						<td>814,251</td>
+						<td>1,399 </td>
+						<td>3,081</td>
+						<td>1,696</td>
+						<td>816,203</td>
+						<td>648,296</td>
+						<td>1,525 </td>
+						<td>3,200</td>
+						<td>1,824</td>
+						<td>823,587</td>
+						<td>643,087</td>
+						<td>1,429 </td>
+						<td>3,050</td>
+						<td>1,780</td>
+						<td>885,849</td>
+						<td>706,648</td>
+						<td>1,485 </td>
+						<td>3,272</td>
+						<td>1,800</td>
+						<td>967,419</td>
+						<td>775,975</td>
+						<td>1,492 </td>
+						<td>3,263</td>
+						<td>1,790</td>
+						<td>846,181</td>
+						<td>661,661</td>
+						<td>1,501 </td>
+						<td>3,441</td>
+						<td>1,811</td>
+						<td>994,105</td>
+						<td>796,730</td>
+						<td>1,582 </td>
+						<td>3,421</td>
+						<td>1,924</td>
+						<td>846,847</td>
+						<td>660,730</td>
+						<td>1,584 </td>
+						<td>3,353</td>
+						<td>1,892</td>
+						<td>744,222</td>
+						<td>571,211</td>
+						<td>1,480 </td>
+						<td>3,303</td>
+						<td>1,804</td>
+						<td>840,944</td>
+						<td>667,565</td>
+						<td>1,405 </td>
+						<td>3,007</td>
+						<td>1,671</td>
+						<td>802,466</td>
+						<td>640,203</td>
+						<td>1,620 </td>
+						<td>3,438</td>
+						<td>2,027</td>
+						<td>901,231</td>
+						<td>714,124</td>
+						<td>1,645 </td>
+						<td>3,411</td>
+						<td>2,020</td>
+						<td>896,974</td>
+						<td>688,326</td>
+						<td>1,838 </td>
+						<td>3,833</td>
+						<td>2,266</td>
+						<td>1,325,678</td>
+						<td>1,081,130</td>
+						<td>1,732 </td>
+						<td>3,559</td>
+						<td>2,081</td>
+						<td>1,165,769</td>
+						<td>946,179</td>
+						<td>1,715 </td>
+						<td>3,469</td>
+						<td>2,070</td>
+						<td>1,060,183</td>
+						<td>837,543</td>
+						<td>1,765 </td>
+						<td>3,646</td>
+						<td>2,161</td>
+						<td>1,036,348</td>
+						<td>818,250</td>
+						<td>1,810 </td>
+						<td>3,472</td>
+						<td>2,208</td>
+						<td>906,853</td>
+						<td>696,875</td>
+						<td>1,752 </td>
+						<td>3,549</td>
+						<td>2,137</td>
+						<td>1,109,920</td>
+						<td>887,401</td>
+						<td>1,955 </td>
+						<td>3,914</td>
+						<td>2,435</td>
+						<td>1,203,203</td>
+						<td>955,775</td>
+						<td>1,863 </td>
+						<td>3,490</td>
+						<td>2,221</td>
+						<td>925,594</td>
+						<td>708,680</td>
 						<td>1,769 </td>
 						<td>3,673</td>
 						<td>2,162</td>
@@ -1853,8 +4691,8 @@
 				</tbody>
 			</table>
 		</div>
-		<!-- 연령구간별 요양급여 비용총액 차트 들어갈 데이타 구하기  -->
 	</div>
+ 
 </body>
 
 </html>
