@@ -14,7 +14,7 @@
 
         .container-wrapper {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             padding: 20px;
@@ -31,9 +31,10 @@
         }
 
         .highcharts-figure,
-        #container {
-            height: 70vh; /* Adjusted for the chart height */
-            width: 100%; /* Full width of the chart container */
+        #container,
+        #pie-container {
+            height: 70vh;
+            width: 100%;
             margin: 0;
         }
 
@@ -86,7 +87,7 @@
 
     <div class="container-wrapper">
         <div class="chart-container">
-            <section class="button-container" style="scale: 0.8;">
+            <section class="button-container">
                 <button id="monthly" class="active">Monthly</button>
                 <button id="quarterly">Quarterly</button>
                 <button id="yearly">Yearly</button>
@@ -100,38 +101,93 @@
         </div>
     </div>
 
+    <div class="container-wrapper">
+        <div class="chart-container">
+            <section class="button-container">
+                <button id="year2021" class="active">2021</button>
+                <button id="year2022">2022</button>
+                <button id="year2023">2023</button>
+            </section>
+            <section>
+                <figure class="highcharts-figure">
+                    <div id="pie-container"></div>
+                </figure>
+            </section>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const monthlyData = {
-                categories: [
-                    202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
-                    202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
-                    202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
-                 ],
-                data: [
-                    22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956, 26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865, 29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245
-                ]
+            const dataSets = {
+                monthly: {
+                    categories: [
+                        202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
+                        202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
+                        202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
+                    ],
+                    data: [
+                        22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956,
+                        26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865,
+                        29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245
+                    ]
+                },
+                quarterly: {
+                    categories: [
+                        'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
+                        'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
+                        'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
+                    ],
+                    data: [
+                        71984, 80276, 79771, 84594,
+                        78464, 87849, 90606, 92717,
+                        91966, 96349, 95044, 96268
+                    ]
+                },
+                yearly: {
+                    categories: ['2021', '2022', '2023'],
+                    data: [316625, 349636, 379627]
+                },
+                ageGroup: {
+                    '2021': {
+                        categories: [
+                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
+                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
+                            'Over 80 years old'
+                        ],
+                        data: [
+                            31363390, 270850970, 1703909300, 7922352130,
+                            30033962910, 75680427780, 114220770800, 66839440990,
+                            16493648500
+                        ]
+                    },
+                    '2022': {
+                        categories: [
+                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
+                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
+                            'Over 80 years old'
+                        ],
+                        data: [
+                            32000000, 280000000, 1750000000, 8000000000,
+                            31000000000, 77000000000, 116000000000, 68000000000,
+                            17000000000
+                        ]
+                    },
+                    '2023': {
+                        categories: [
+                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
+                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
+                            'Over 80 years old'
+                        ],
+                        data: [
+                            32500000, 290000000, 1800000000, 8100000000,
+                            32000000000, 78000000000, 118000000000, 69000000000,
+                            17500000000
+                        ]
+                    }
+                }
             };
 
-            const quarterlyData = {
-                categories: [
-                    'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
-                    'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
-                    'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
-                 ],
-                data: [
-                    71984, 80276, 79771, 84594,
-                    78464 , 87849 , 90606 , 92717 ,
-                    91966,  96349 , 95044,  96268 
-                ]	
-            };
-
-            const yearlyData = {
-                categories: ['2021', '2022', '2023'],
-                data: [316625 , 349636 , 379627 ]
-            };
-
-            let chart = Highcharts.chart('container', {
+            let lineChart = Highcharts.chart('container', {
                 chart: {
                     type: 'line'
                 },
@@ -139,7 +195,7 @@
                     text: '월별 환자수 추이 (단위: 명)'
                 },
                 xAxis: {
-                    categories: monthlyData.categories
+                    categories: dataSets.monthly.categories
                 },
                 yAxis: {
                     labels: {
@@ -189,26 +245,68 @@
                 },
                 series: [{
                     name: '환자수',
-                    data: monthlyData.data
+                    data: dataSets.monthly.data
                 }]
             });
 
-            document.getElementById('monthly').addEventListener('click', function () {
-                updateChart(monthlyData, '월별 환자수 추이 (단위: 명)', 'Monthly');
+            let pieChart = Highcharts.chart('pie-container', {
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: '연령대별 요양급여청구총액 비율 (단위: %, 원)'
+                },
+                tooltip: {
+                    useHTML: true,
+                    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                    borderRadius: 8,
+                    borderWidth: 0,
+                    padding: 12,
+                    shadow: true,
+                    style: {
+                        color: 'white',
+                        fontSize: '14px'
+                    },
+                    formatter: function () {
+                        return `
+                            <div class="custom-tooltip">
+                                <b>${this.point.name}</b><br/>
+                                <b>비율:</b> ${Highcharts.numberFormat(this.percentage, 2)}%<br/>
+                                <b>총액:</b> ${Highcharts.numberFormat(this.point.y, 0)}
+                            </div>
+                        `;
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.name}: {point.percentage:.1f}%'
+                        }
+                    }
+                },
+                series: [{
+                    name: '비율',
+                    colorByPoint: true,
+                    data: dataSets.ageGroup['2021'].categories.map((name, index) => ({
+                        name: name,
+                        y: dataSets.ageGroup['2021'].data[index]
+                    }))
+                }]
             });
 
-            document.getElementById('quarterly').addEventListener('click', function () {
-                updateChart(quarterlyData, '분기별 환자수 추이 (단위: 명)', 'Quarterly');
-            });
-
-            document.getElementById('yearly').addEventListener('click', function () {
-                updateChart(yearlyData, '연별 환자수 추이 (단위: 명)', 'Yearly');
-            });
-
-            function updateChart(data, title, period) {
-                chart.update({
+            function updateLineChart(period) {
+                const data = dataSets[period];
+                lineChart.update({
+                    chart: {
+                        type: 'line'
+                    },
                     title: {
-                        text: title
+                        text: {
+                            monthly: '월별 환자수 추이 (단위: 명)',
+                            quarterly: '분기별 환자수 추이 (단위: 명)',
+                            yearly: '연별 환자수 추이 (단위: 명)'
+                        }[period]
                     },
                     xAxis: {
                         categories: data.categories
@@ -219,12 +317,41 @@
                     }]
                 });
 
-                // Update button active state
                 document.querySelectorAll('.button-container button').forEach(button => {
                     button.classList.remove('active');
                 });
-                document.getElementById(period.toLowerCase()).classList.add('active');
+                document.getElementById(period).classList.add('active');
             }
+
+            function updatePieChart(year) {
+                const data = dataSets.ageGroup[year];
+                pieChart.update({
+                    title: {
+                        text: `${year}년 연령대별 요양급여청구총액 비율 (단위: %, 원)`
+                    },
+                    series: [{
+                        name: '비율',
+                        colorByPoint: true,
+                        data: data.categories.map((name, index) => ({
+                            name: name,
+                            y: data.data[index]
+                        }))
+                    }]
+                });
+
+                document.querySelectorAll('.button-container button').forEach(button => {
+                    button.classList.remove('active');
+                });
+                document.getElementById(`year${year}`).classList.add('active');
+            }
+
+            document.getElementById('monthly').addEventListener('click', () => updateLineChart('monthly'));
+            document.getElementById('quarterly').addEventListener('click', () => updateLineChart('quarterly'));
+            document.getElementById('yearly').addEventListener('click', () => updateLineChart('yearly'));
+
+            document.getElementById('year2021').addEventListener('click', () => updatePieChart('2021'));
+            document.getElementById('year2022').addEventListener('click', () => updatePieChart('2022'));
+            document.getElementById('year2023').addEventListener('click', () => updatePieChart('2023'));
         });
     </script>
 </body>
