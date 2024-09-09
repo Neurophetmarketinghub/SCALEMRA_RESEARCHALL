@@ -10,16 +10,19 @@
 			height: 100%;
 			margin: 0;
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			justify-content: center;
-			flex-direction: row;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			background-color: #f0f0f0;
 		}
 
 		.container-wrapper {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			height: 100vh;
 			padding: 20px;
-			box-sizing: border-box; 
+			box-sizing: border-box;
 		}
 
 		.chart-container {
@@ -73,52 +76,6 @@
 			border-radius: 8px;
 			box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 		}
-
-
-caption {
-  padding-bottom: 5px;
-  font-family: Verdana, sans-serif;
-  font-size: 14pt;
-  font-weight: bold;
-  color: #555;
-}
-
-table {
-  width: 80%;
-  font-family: Verdana, sans-serif;
-  font-size: 10pt;
-  color: #555;
-  border-collapse: collapse;
-  border: 3px solid #ccc;
-  margin: 2px auto;
-}
-
-tr {
-  border-bottom: 2px solid #eee;
-}
-
-th {
-  border-left: 2px solid #eee;
-  border-right: 2px solid #eee;
-  padding: 12px 15px;
-  border-collapse: collapse;
-}
-
-th[scope="col"] {
-  background-color: #ffe;
-}
-
-th[scope="row"] {
-  background-color: #f0fcff;
-  text-align: left;
-}
-
-td {
-  border-left: 2px solid #eee;
-  border-right: 2px solid #eee;
-  padding: 12px 15px;
-  border-collapse: collapse;
-}
 	</style>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -131,8 +88,7 @@ td {
 	<header>
 		<h1 style="text-align: center; color: #333; margin: 20px 0;">Data Visualization Dashboard</h1>
 	</header>
-
-	<div class="container">
+	<div class="chart-container">
 		<section class="button-container">
 			<button id="monthly" class="active">Monthly</button>
 			<button id="quarterly">Quarterly</button>
@@ -141,14 +97,16 @@ td {
 		<div id="container"></div>
 	</div>
 
-	<div class="container">
+	<div class="chart-container">
 		<section class="button-container">
 			<button id="year2021" class="active">2021</button>
 			<button id="year2022">2022</button>
 			<button id="year2023">2023</button>
 		</section>
- 			<div id="pie-container"></div>
- 	</div>
+		<section>
+			<div id="pie-container"></div>
+		</section>
+	</div>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const dataSets = {
@@ -321,7 +279,7 @@ td {
 					}
 				},
 				series: [{
-					name: '총액',
+					name: '비율',
 					colorByPoint: true,
 					data: dataSets.ageGroup['2021'].categories.map((name, index) => ({
 						name: name,
