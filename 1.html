@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            height: 100%; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center children horizontally */
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            margin: auto; /* Center the container horizontally */
+        }
+
+        .button-container {
+            width: 100%; /* Ensure button container takes full width */
+            margin-bottom: 30px; /* Increased margin for better spacing */
+            text-align: left; /* Align buttons to the left */
+        }
+
+        .button-container button {
+            padding: 12px 24px;
+            margin: 5px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(90deg, rgba(128, 128, 128, 0.164), rgba(128, 128, 128, 0.164));
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-container button.active {
+            background: #007bff;
+            transform: scale(1.05);
+        }
+
+        .button-container button:hover {
+            background: #027cfd27;
+            transform: scale(1.05);
+        }
+
+        .custom-tooltip {
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #container, #pie-container {
+            width: 100%;
+            height: 400px; /* Set a specific height for charts */
+        }
+
+        table {
+            width: 85%;
+            font-family: Verdana, sans-serif;
+            font-size: 10pt;
+            color: #555;
+            border-collapse: collapse;
+            border: 3px solid #ccc;
+            margin: 2px auto;
+            text-align: center;
+        }
+
+        tr {
+            border-bottom: 2px solid #eee;
+            text-align: center;
+        }
+
+        th {
+            border-left: 2px solid #eee;
+            border-right: 2px solid #eee;
+            padding: 12px 15px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th[scope="col"] {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+        }
+
+        th[scope="row"] {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        td {
+            border-left: 2px solid #eee;
+            border-right: 2px solid #eee;
+            padding: 12px 15px;
+            border-collapse: collapse;
+        }
+    </style>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <title>SCALE MRA_DATA HUB</title>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center; color: #333; margin: 20px 0;">Data Visualization Dashboard</h1>
+    </header>
+
+    <div class="container" style="margin-top: 5rem;">
+        <section class="button-container">
+            <button id="monthly" class="active">Monthly</button>
+            <button id="quarterly">Quarterly</button>
+            <button id="yearly">Yearly</button>
+            <div id="container"></div>
+        </section>
+    </div>
+
+    <div class="container" style="margin-top: 5rem;">
+        <section class="button-container">
+            <button id="year2021" class="active">2021</button>
+            <button id="year2022">2022</button>
+            <button id="year2023">2023</button>
+            <div id="pie-container"></div>
+        </section>
+    </div>
+
+    <section>
+        <h1>test</h1>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dataSets = {
+                monthly: {
+                    categories: [
+                        202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
+                        202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
+                        202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
+                    ],
+                    data: [
+                        22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956,
+                        26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865,
+                        29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245
+                    ]
+                },
+                quarterly: {
+                    categories: [
+                        '2021 1Q', '2021 2Q', '2021 3Q', '2021 4Q',
+                        '2022 1Q', '2022 2Q', '2022 3Q', '2022 4Q',
+                        '2023 1Q', '2023 2Q', '2023 3Q', '2023 4Q',
+                    ],
+                    data: [
+                        71984, 80276, 79771, 84594,
+                        78464, 87849, 90606, 92717,
+                        91966, 96349, 95044, 96268
+                    ]
+                },
+                yearly: {
+                    categories: ['2021', '2022', '2023'],
+                    data: [316625, 349636, 379627]
+                },
+                ageGroup: {
+                    '2021': {
+                        categories: [
+                            '0-9세', '10-19세', '20-29세', '30-39세',
+                            '40-49세', '50-59세', '60-69세', '70-79세',
+                            'Over 80세'
+                        ],
+                        data: [
+                            58522600, 249597260, 1630221010, 8069725560,
+                            27649267630, 66514862060, 97996199300, 55978060560,
+                            12646960980
+                        ]
+                    },
+                    '2022': {
+                        categories: [
+                            '0-9세', '10-19세', '20-29세', '30-39세',
+                            '40-49세', '50-59세', '60-69세', '70-79세',
+                            'Over 80세'
+                        ],
+                        data: [
+                            37912250, 191601150, 1771758740, 7694868180,
+                            29374356370, 70626244090, 104192285620, 60137511800,
+                            14608379420
+                        ]
+                    },
+                    '2023': {
+                        categories: [
+                            '0-9세', '10-19세', '20-29세', '30-39세',
+                            '40-49세', '50-59세', '60-69세', '70-79세',
+                            'Over 80세'
+                        ],
+                        data: [
+                            31363390, 270850970, 1703909300, 7922352130,
+                            30033962910, 75680427780, 114220770800, 66839440990,
+                            16493648500
+                        ]
+                    }
+                }
+            };
+
+            let lineChart = Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: '월별 환자수 추이 (단위: 명)'
+                },
+                xAxis: {
+                    categories: dataSets.monthly.categories
+                },
+                yAxis: {
+                    title: {
+                        text: '환자수 (명)'
+                    }
+                },
+                series: [{
+                    name: '환자수',
+                    data: dataSets.monthly.data
+                }],
+                tooltip: {
+                    useHTML: true,
+                    formatter: function () {
+                        return '<div class="custom-tooltip">' +
+                            '<strong>' + Highcharts.dateFormat('%Y-%m', new Date(this.x)) + '</strong><br>' +
+                            '환자수: ' + Highcharts.numberFormat(this.y, 0) +
+                            '</div>';
+                    }
+                }
+            });
+
+            let pieChart = Highcharts.chart('pie-container', {
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: '연령대별 환자수 (2021)'
+                },
+                series: [{
+                    name: '환자수',
+                    data: dataSets.ageGroup['2021'].categories.map((category, index) => ({
+                        name: category,
+                        y: dataSets.ageGroup['2021'].data[index]
+                    }))
+                }],
+                tooltip: {
+                    useHTML: true,
+                    formatter: function () {
+                        return '<div class="custom-tooltip">' +
+                            '<strong>' + this.point.name + '</strong><br>' +
+                            '환자수: ' + Highcharts.numberFormat(this.point.y, 0) +
+                            '</div>';
+                    }
+                }
+            });
+
+            function updateCharts(period) {
+                lineChart.xAxis[0].setCategories(dataSets[period].categories);
+                lineChart.series[0].setData(dataSets[period].data);
+            }
+
+            function updatePieChart(year) {
+                pieChart.series[0].setData(dataSets.ageGroup[year].categories.map((category, index) => ({
+                    name: category,
+                    y: dataSets.ageGroup[year].data[index]
+                })));
+                pieChart.setTitle({ text: '연령대별 환자수 (' + year + ')' });
+            }
+
+            document.querySelectorAll('.button-container button').forEach(button => {
+                button.addEventListener('click', function () {
+                    document.querySelectorAll('.button-container button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    if (this.parentNode.id === 'container') {
+                        updateCharts(this.id);
+                    } else if (this.parentNode.id === 'pie-container') {
+                        updatePieChart(this.id);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
