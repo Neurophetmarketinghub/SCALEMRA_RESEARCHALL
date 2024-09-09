@@ -9,7 +9,7 @@
         body {
             height: 100%;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container-wrapper {
@@ -17,11 +17,17 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .chart-container {
             width: 70%;
             max-width: 1200px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
         }
 
         .highcharts-figure,
@@ -33,30 +39,37 @@
 
         .button-container {
             text-align: center;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         .button-container button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin: 5px;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
+            border-radius: 25px;
+            background: linear-gradient(90deg, rgba(128, 128, 128, 0.164);)
             color: white;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .button-container button.active {
-            background-color: #0056b3;
+            background: #007bff;
+            transform: scale(1.05);
+        }
+
+        .button-container button:hover {
+            background: #027cfd27;
+            transform: scale(1.05);
         }
 
         .custom-tooltip {
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: rgba(0, 0, 0, 0.85);
             color: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         }
     </style>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -68,7 +81,7 @@
 
 <body>
     <header>
-        <h1>DATA</h1>
+        <h1 style="text-align: center; color: #333; margin: 20px 0;">Data Visualization Dashboard</h1>
     </header>
 
     <div class="container-wrapper">
@@ -86,128 +99,127 @@
         </div>
     </div>
 
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-    const monthlyData = {
-        categories: [
-            202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
-            202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
-            202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
-            202401
-        ],
-        data: [
-            22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956, 26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865, 29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245, 33507
-        ]
-    };
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const monthlyData = {
+                categories: [
+                    202101, 202102, 202103, 202104, 202105, 202106, 202107, 202108, 202109, 202110, 202111, 202112,
+                    202201, 202202, 202203, 202204, 202205, 202206, 202207, 202208, 202209, 202210, 202211, 202212,
+                    202301, 202302, 202303, 202304, 202305, 202306, 202307, 202308, 202309, 202310, 202311, 202312,
+                    202401
+                ],
+                data: [
+                    22890, 22367, 26727, 26644, 25825, 27807, 27523, 26754, 25494, 26377, 29261, 28956, 26623, 24394, 27447, 27247, 30422, 30180, 30058, 30812, 29736, 28875, 31977, 31865, 29485, 30074, 32407, 31399, 32339, 32611, 32578, 32847, 29619, 31587, 33436, 31245, 33507
+                ]
+            };
 
-    const quarterlyData = {
-        categories: [
-            'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
-            'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
-            'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
-            'Q1 2024'
-        ],
-        data: [
-            71984, 78529, 77145, 81289,
-            75244, 77576, 82354, 79955,
-            90325, 89361, 97948, 89748,
-            95712
-        ]
-    };
+            const quarterlyData = {
+                categories: [
+                    'Q1 2021', 'Q2 2021', 'Q3 2021', 'Q4 2021',
+                    'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
+                    'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023',
+                    'Q1 2024'
+                ],
+                data: [
+                    71984, 78529, 77145, 81289,
+                    75244, 77576, 82354, 79955,
+                    90325, 89361, 97948, 89748,
+                    95712
+                ]
+            };
 
-    let chart = Highcharts.chart('container', {
-        chart: {
-            type: 'line'
-        },
-        title: {
-            text: '월별 환자수 추이 (단위: 명)'
-        },
-        xAxis: {
-            categories: monthlyData.categories
-        },
-        yAxis: {
-            labels: {
-                enabled: true
-            }
-        },
-        tooltip: {
-            useHTML: true,
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
-            borderRadius: 5,
-            borderWidth: 0,
-            padding: 10,
-            shadow: true,
-            style: {
-                color: 'white',
-                fontSize: '14px'
-            },
-            formatter: function () {
-                return `
-                    <div class="custom-tooltip">
-                        <b>${this.x}</b><br/>
-                        <b>${this.series.name}:</b> ${this.y}
-                    </div>
-                `;
-            },
-            positioner: function (labelWidth, labelHeight, point) {
-                let x = point.plotX + this.chart.plotLeft;
-                let y = point.plotY + this.chart.plotTop;
-
-                if (x + labelWidth > this.chart.chartWidth) {
-                    x -= (x + labelWidth) - this.chart.chartWidth;
-                }
-                if (y + labelHeight > this.chart.chartHeight) {
-                    y -= (y + labelHeight) - this.chart.chartHeight;
-                }
-
-                return { x: x, y: y };
-            }
-        },
-        plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: true
+            let chart = Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
                 },
-                enableMouseTracking: true
+                title: {
+                    text: '월별 환자수 추이 (단위: 명)'
+                },
+                xAxis: {
+                    categories: monthlyData.categories
+                },
+                yAxis: {
+                    labels: {
+                        enabled: true
+                    }
+                },
+                tooltip: {
+                    useHTML: true,
+                    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                    borderRadius: 8,
+                    borderWidth: 0,
+                    padding: 12,
+                    shadow: true,
+                    style: {
+                        color: 'white',
+                        fontSize: '14px'
+                    },
+                    formatter: function () {
+                        return `
+                            <div class="custom-tooltip">
+                                <b>${this.x}</b><br/>
+                                <b>${this.series.name}:</b> ${this.y}
+                            </div>
+                        `;
+                    },
+                    positioner: function (labelWidth, labelHeight, point) {
+                        let x = point.plotX + this.chart.plotLeft;
+                        let y = point.plotY + this.chart.plotTop;
+
+                        if (x + labelWidth > this.chart.chartWidth) {
+                            x -= (x + labelWidth) - this.chart.chartWidth;
+                        }
+                        if (y + labelHeight > this.chart.chartHeight) {
+                            y -= (y + labelHeight) - this.chart.chartHeight;
+                        }
+
+                        return { x: x, y: y };
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: '환자수',
+                    data: monthlyData.data
+                }]
+            });
+
+            document.getElementById('monthly').addEventListener('click', function () {
+                updateChart(monthlyData, '월별 환자수 추이 (단위: 명)', 'Monthly');
+            });
+
+            document.getElementById('quarterly').addEventListener('click', function () {
+                updateChart(quarterlyData, '분기별 환자수 추이 (단위: 명)', 'Quarterly');
+            });
+
+            function updateChart(data, title, period) {
+                chart.update({
+                    title: {
+                        text: title
+                    },
+                    xAxis: {
+                        categories: data.categories
+                    },
+                    series: [{
+                        name: '환자수',
+                        data: data.data
+                    }]
+                });
+
+                // Update button active state
+                document.querySelectorAll('.button-container button').forEach(button => {
+                    button.classList.remove('active');
+                });
+                document.getElementById(period.toLowerCase()).classList.add('active');
             }
-        },
-        series: [{
-            name: '환자수',
-            data: monthlyData.data
-        }]
-    });
-
-    document.getElementById('monthly').addEventListener('click', function () {
-        updateChart(monthlyData, '월별 환자수 추이 (단위: 명)', 'Monthly');
-    });
-
-    document.getElementById('quarterly').addEventListener('click', function () {
-        updateChart(quarterlyData, '분기별 환자수 추이 (단위: 명)', 'Quarterly');
-    });
-
-    function updateChart(data, title, period) {
-        chart.update({
-            title: {
-                text: title
-            },
-            xAxis: {
-                categories: data.categories
-            },
-            series: [{
-                name: '환자수',
-                data: data.data
-            }]
         });
-
-        // Update button active state
-        document.querySelectorAll('.button-container button').forEach(button => {
-            button.classList.remove('active');
-        });
-        document.getElementById(period.toLowerCase()).classList.add('active');
-    }
-});
-
-</script>
+    </script>
 </body>
 
 </html>
