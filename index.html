@@ -72,10 +72,10 @@
             border-radius: 8px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         }
-    </style>
+    </style> 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="js/exportingdatas.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <title>SCALE MRA_DATA HUB</title>
 </head>
@@ -148,28 +148,28 @@
                     data: [316625, 349636, 379627]
                 },
                 ageGroup: {
-                    '2021': {
-                        categories: [
-                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
-                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
-                            'Over 80 years old'
-                        ],
-                        data: [
-                            31363390, 270850970, 1703909300, 7922352130,
-                            30033962910, 75680427780, 114220770800, 66839440990,
-                            16493648500
+					'2021': {
+        categories: [
+            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
+            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
+            'Over 80 years old'
+        ],
+        data: [
+            58522600, 249597260, 1630221010, 8069725560,
+            27649267630, 66514862060, 97996199300, 55978060560,
+            12646960980
                         ]
                     },
                     '2022': {
-                        categories: [
-                            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
-                            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
-                            'Over 80 years old'
-                        ],
-                        data: [
-                            32000000, 280000000, 1750000000, 8000000000,
-                            31000000000, 77000000000, 116000000000, 68000000000,
-                            17000000000
+        categories: [
+            '0-9 years old', '10-19 years old', '20-29 years old', '30-39 years old',
+            '40-49 years old', '50-59 years old', '60-69 years old', '70-79 years old',
+            'Over 80 years old'
+        ],
+        data: [
+            37912250, 191601150, 1771758740, 7694868180,
+            29374356370, 70626244090, 104192285620, 60137511800,
+            14608379420
                         ]
                     },
                     '2023': {
@@ -353,7 +353,7 @@
             document.getElementById('year2022').addEventListener('click', () => updatePieChart('2022'));
             document.getElementById('year2023').addEventListener('click', () => updatePieChart('2023'));
         });
-    </script>
+    </script> 
 </body>
 
 </html>
